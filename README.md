@@ -10,14 +10,14 @@ https://www.conventionalcommits.org/en/v1.0.0/
 # Pull Request
 Reviewer : An
 
-# Variable naming convention
+# Variable naming convention: snake_case
 example_variable_name
 
 # Function naming convention and comment rule
 /*
 Author:
-Function name:
-Behavior:
+Name:
+Description:
 */
 void Example_Function(){}
 
