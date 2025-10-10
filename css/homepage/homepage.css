@@ -62,10 +62,21 @@ select {
     align-items: center;
 }
 
+.combine-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
 .content-box {
     width: 100vw;
     height: 100vh;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .sub-title {
@@ -73,7 +84,10 @@ select {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    margin-top: 1em;
+    padding-top: 20px;
+    z-index: 2;
+    position: absolute;
+    /* margin-top: 1em; */
 }
 
 .sub-title h2 {
@@ -85,16 +99,18 @@ select {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
+    z-index: 1;
+
 }
 
 .sub-box img {
-    width: 46vw;
-    height: 55vh;
+    width: 40vw;
+    height: 50vh;
     padding-left: 4rem;
 }
 
 .content-text {
+    width: 30vw;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -135,25 +151,45 @@ footer {
     height: 363px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
-.infobox h3{
-    font-family: 'Old Standard TT';
-    max-width:321px;
+.ftbox {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.inforbox h4{
-    font-family: 'Roboto';
+.inforbox {
+
+}
+
+.infobox h3 {
+    font-family: 'Old Standard TT';
     max-width: 321px;
 }
 
-.group-ico{
+.inforbox h4 {
+    font-family: 'Roboto';
+    max-width: 321px;
+    line-height: 3em;
+}
+
+.inforbox h5 {
+    font-family: 'Roboto';
+    max-width: 321px;
+    line-height: 3em;
+}
+
+.group-ico {
     display: flex;
     flex-direction: row;
 }
-.ico{
+
+.ico {
     width: 8px;
     height: 8px;
 }
@@ -163,32 +199,35 @@ footer {
     display: flex;
     flex-direction: row;
     font-family: 'Roboto';
+    justify-content: space-around;
+    align-items:  center;
 
 }
 
 .small-banner img {
     width: 28vw;
     height: 70vh;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
-.banner-board{
+.banner-board {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
-.banner-box{
+.banner-box {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    align-items: center;
+    align-items: start;
 }
 
-.banner-box h3, h4{
+.banner-box h3,
+h4 {
     width: 23vw;
     font-family: 'Roboto';
     font-weight: lighter;
