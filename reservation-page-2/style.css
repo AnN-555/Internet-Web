@@ -1,0 +1,39 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+}
+h1 {
+    font-family: "Old Standard TT", serif;
+    text-align: center;
+}
+.language-selection {
+    text-align: right;
+    font-size: 1em;
+    display: block;
+}
+
+.phrase ol {
+    text-align: center;
+    color: black;
+    display: flex; /*put all in a row*/
+    justify-content: space-around; /*add space between*/
+}
+
+.room-type {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+/*font family*/
+.old-standard-tt {
+  font-family: "Old Standard TT", serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.roboto-standard {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
