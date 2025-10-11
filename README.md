@@ -10,6 +10,11 @@ https://www.conventionalcommits.org/en/v1.0.0/
 # Pull Request
 Reviewer : An
 
+<<<<<<< HEAD
+# Members:
+
+Lâm Minh Ân
+=======
 # Variable naming convention: snake_case
 example_variable_name
 
@@ -29,3 +34,4 @@ Source: A function
 /* ===============================
    1. Reset / Normalize
    =============================== */
+>>>>>>> 8425ab45732a35a01455133b9337da37d2d566fc
