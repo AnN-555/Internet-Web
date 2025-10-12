@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+h1 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-size: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 134px;
+}
+h2 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+}
+.language-selection {
+  text-align: right;
+  font-size: 1em;
+  display: block;
+}
+nav.top-page {
+  text-align: center;
+  text-decoration: none;
+  background-image: url("../images/homepage/home_icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+  background-color: #ebe3d7;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 50px;
+}
+.language-style {
+  background: transparent;
+  border: 0;
+}
+.spacing__room {
+  height: 80px;
+}
+.room {
+  display: flex;
+  gap: 35px;
+  width: 995px;
+  height: 220px;
+}
+.room__image > img {
+  height: 220px;
+  width: 330px;
+}
+.room__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.room__detail__booking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.room__detail__booking__price {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: end;
+}
+.room__detail__booking__price > p {
+  font-family: "Old Standard TT", serif;
+  font-size: 32px;
+}
+.room__detail__booking__price > button {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  width: 183px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #212322;
+  background: transparent;
+}
+.payment {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  height: 1070px;
+  padding: 0 20px;
+  background-color: #faf8f5;
+  box-sizing: border-box;
+}
+.payment h2 {
+  font-size: 28px;
+  margin-top: 22px;
+  text-align: center;
+  font-weight: 400;
+}
+.payment span {
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 20px;
+}
+.payment p {
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: 10px;
+}
+.payment__image > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.payment__detail {
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
+.payment__detail > img {
+  max-width: 20px;
+  height: auto;
+  margin-right: 14px;
+}
+.phase ul {
+  color: black;
+  list-style: none;
+  font-size: 20px;
+  text-decoration: underline;
+  display: flex;
+  background-color: #faf8f5;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 50px;
+  align-items: center;
+  padding: 0 100px;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+.room-type {
+  font-weight: bold;
+  font-size: 2em;
+}
+.payment__button {
+  margin-top: 56px;
+  margin-bottom: 35px;
+  height: 40px;
+  background-color: #212322;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 8px;
+}
+.special__request {
+  width: 940px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.special__request h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.special__request span {
+  font-size: 14px;
+  margin-top: 16px;
+  font-family: "Old Standard TT", serif;
+}
+.checkbox__option {
+  margin-top: 70px;
+  width: 751px;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+.spacer {
+    height: 70px;
+}
+label {
+  font-size: 24px;
+}
+.checkbox__option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+.commment__box {
+    height: 150px;
+    width: 940px;
+    border: 1px solid #000000;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    padding-top: 12px;
+    padding-left: 12px;
+}
+/*font family*/
+.old-standard-tt {
+  font-family: "Old Standard TT", serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.roboto-standard {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
