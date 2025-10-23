@@ -1,10 +1,10 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*font-face*/
+/* font-face */
 .old-standard-tt {
     font-family: 'Old Standard TT', serif;
     font-weight: normal;
@@ -18,26 +18,25 @@
 }
 
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", serif;
     font-size: 16px;
     font-weight: 300;
     color: #212322;
     scroll-behavior: smooth;
 }
 
-h1,
-h2 {
+h1, h2, h3 {
     font-family: 'Old Standard TT', serif;
     font-style: normal;
     line-height: normal;
 }
 
-/*Navigation*/
+/* Navigation */
 .nav {
+    display: flex;
     font-size: 20px;
     width: 100%;
     position: fixed;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
@@ -56,25 +55,25 @@ h2 {
     gap: 220px;
 }
 
+.menu-list li a {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    color: #212322;
+    transition: all 0.5s ease;
+}
+
 .menu-logo img {
     height: 80px;
     width: auto;
 }
 
-.menu-list li a {
-    position: relative;
-    text-decoration: none;
-    color: #212322;
-    text-align: center;
-    transition: all 0.5s ease;
-}
-
-/* Đường gạch ẩn ban đầu */
+/* Đường gạch chân */
 .menu-list li a::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -3px;
+    bottom:  -3px;
     width: 0;
     height: 2px;
     background-color: #C6AA76;
@@ -100,15 +99,15 @@ h2 {
 .reserve-button {
     text-decoration: none;
     margin-right: 50px;
-    color: #fff;
-    background-color: #212322;
     padding: 0 38px;
     border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    background-color: #212322;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 50px;
 }
 
 .reserve-button:hover {
@@ -121,63 +120,123 @@ h2 {
     align-items: center;
 }
 
-/*Banner*/
-.banner img {
-    width: 100%;
+.nav .fa-bars {
+    display: none;
 }
 
+/* Banner */
 .banner {
     display: grid;
     place-items: center;
     position: relative;
 }
 
+.banner img{
+    width: 100%;
+}
+
 .banner h1 {
-    position: absolute;
-    top: 41%;
     font-size: 60px;
     font-weight: 400;
     color: #fff;
+    position: absolute;
     text-transform: uppercase;
     text-align: center;
+    top: 41%;
 }
 
 .banner p {
-    position: absolute;
-    bottom: 42%;
     font-family: 'Old Standard TT', serif;
     font-size: 50px;
     font-weight: 400;
     color: #fff;
+    position: absolute;
     text-transform: capitalize;
     text-align: center;
+    bottom: 42%;
 }
 
-/*information*/
-.about-us img {
+/* Intro */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 880px;
+}
+
+.intro h2 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #9B8D5F;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: normal;
+    margin-top: 50px;
+}
+
+.intro p {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.70);
+    width: 990px;
+    text-align: center;
+    line-height: normal;
+    margin-top: 15px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 45px;
+}
+
+/* Information */
+.dining img {
     width: 100%;
     height: auto;
 }
 
-.about-us-text p {
+.dining-layout,
+.dining-layout-reverse {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    height: 880px;
+    gap: 80px;
+    padding: 260px;
+}
+
+.dining-layout {
+    background-color: rgba(235, 227, 215, 0.33);
+}
+
+.dining-text h3 {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 20px;
+    position: relative;
+    line-height: normal;
+}
+
+.dining-text p {
     color: #212322;
     font-size: 18px;
-    font-style: normal;
     font-weight: 300;
+    font-style: normal;
+    margin-bottom: 30px;
     line-height: 30px;
     width: 440px;
 }
 
-.about-us-text h2 {
+.dining-text i {
+    color: #9B8D5F;
     font-size: 24px;
-    font-weight: bold;
-    font-style: normal;
-    line-height: normal;
-    position: relative;
-    margin-bottom: 20px;
+    margin-right: 15px;
 }
 
-.about-us-text h2::after {
+.dining-text h3::after {
     content: "";
     position: absolute;
     width: 100px;
@@ -188,57 +247,59 @@ h2 {
     border-radius: 2px;
 }
 
-
-.about-us-layout,
-.about-us-layout-reverse {
+.dining-text button{
+    font-family: 'Old Standard TT', serif;
+    font-size: 15px;
+    font-weight: 400;
     display: flex;
+    width: 200px;
+    height: 35px;
     align-items: center;
-    justify-content: space-between;
-    height: 880px;
-    gap: 80px;
-    padding: 260px;
+    justify-content: center;
+    color: #9B8D5F;
+    background-color: transparent;
+    border: 1px solid #9B8D5F;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
- .about-us-layout {
-    background-color: rgba(235, 227, 215, 0.33);
- }
+.dining-text button:hover {
+    color: #fff;
+    background-color: #9B8D5F;
+}
 
- /* footer */
- .footer {
+/* Footer */
+.footer {
     display: flex;
     justify-content: space-around;
     height: 400px;
     background-color: #EBE3D7;
     padding: 120px 0;
- }
+}
 
- .footer h2 {
+.footer h3 {
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
     margin-bottom: 30px;
- }
+}
 
- .footer p {
+.footer p {
     font-size: 16px;
     font-weight: 300;
     font-style: normal;
     margin-bottom: 20px;
- }
+}
 
- .footer a {
-    display: block;
+
+.footer a {
     font-size: 16px;
+    display: block;
     color: #212322;
     text-decoration: none;
     margin-bottom: 20px;
- }
+}
 
- .footer .fa-brands {
+.footer .fa-brands {
     font-size: 40px;
- }
-
- .nav .fa-bars {
-    display: none;
- }
-
+}

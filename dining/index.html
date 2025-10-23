@@ -1,51 +1,57 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dining page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <!--navigation-->
-        <nav>
-            <div class="menu">
-                <!--logo-->
-                <div class="menu-logo">
-                    <a href="">
-                        <img src="..\images\logo3.png" alt="Dimond Hotel Logo">
-                    </a>
-                </div>
-                <!--menu-->
-                <div class="menu-list">
-                    <ul class="nav-link">
-                        <li><a href="">HOME</a></li>
-                        <li><a href="">ROOMS</a></li>
-                        <li><a href="">DINING</a></li>
-                        <li><a href="">ABOUT US</a></li>
-                    </ul>
-                </div>
-                <!--booking-->
-                <div class="booking">
-                    <a href="" class="reserve-button">RESERVE</a>
-                    <label for="" class="icons">
-                        <p>EN</p>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </label>
-                </div>
+        <nav class="nav">
+            <i class="fa-solid fa-bars"></i>
+            <!--logo-->
+            <div class="menu-logo">
+                <a href="..\index.html">
+                    <img src="..\images\logo3.png" alt="Dimond Hotel Logo">
+                </a>
+            </div>
+            <!--menu-->
+            <div class="menu-list">
+                <ul>
+                    <li><a href="..\index.html">HOME</a></li>
+                    <li><a href="">ROOMS</a></li>
+                    <li><a href="..\dining\index.html">DINING</a></li>
+                    <li><a href="..\about-us\index.html">ABOUT US</a></li>
+                </ul>
+            </div>
+            <!--booking-->
+            <div class="booking">
+                <a href="" class="reserve-button">RESERVE</a>
+                <label for="" class="icons">
+                    <p>EN</p>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
             </div>
         </nav>
     </header>
     <main>
-        <!--background-->
-        <section class="hero" style="background-image: url(../images/dining/dining_info.jpg);">
+        <!--Banner-->
+        <section class="banner">
+            <img src="..\images\dining\dining_info.png" alt="Dining">
             <h1>DINING</h1>
             <p>Culinary Excellence</p>
         </section>
-        <!--Intro dining-->
+        <!--Intro-->
         <section class="intro">
             <h2>BEYOND FLAVORS</h2>
             <p>At Diamond Land Hotel, dining is more than a meal — it is an experience of taste and passion. Each dish
@@ -53,15 +59,9 @@
                 crafted with fresh ingredients, refined techniques, and a touch of love, offering comfort and delight on
                 every occasion.</p>
             <div class="images">
-                <figure>
-                    <img src="..\images\dining\dining_teabreak.jpg" alt="Teabreak in the afternoon">
-                </figure>
-                <figure>
-                    <img src="..\images\dining\dining_alacarte.jpg" alt="Enjoy the meal by the river">
-                </figure>
-                <figure>
-                    <img src="..\images\dining\dining_happyhour.jpg" alt="Enjoy cocktails during happy hour">
-                </figure>
+                <img src="..\images\dining\dining_teabreak.png" alt="Teabreak in the afternoon">
+                <img src="..\images\dining\dining_alacarte.png" alt="Enjoy the meal by the river">
+                <img src="..\images\dining\dining_happyhour.png" alt="Enjoy cocktails during happy hour">
             </div>
         </section>
         <!--Information-->
@@ -70,18 +70,18 @@
                 <div class="dining-text">
                     <h3>Riverside Pearl</h3>
                     <p>A refined dining destination where elegant flavors meet the serene beauty of the riverside.</p>
-                    <p><i class="fa-regular fa-clock"></i> Open: 6.00 AM - 10.00 PM, everyday</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Location: 1st floor</p>
+                    <p><i class="fa-regular fa-clock"></i>Open: 6.00 AM - 10.00 PM, everyday</p>
+                    <p><i class="fa-solid fa-location-dot"></i>Location: 1st floor</p>
                     <button>LEARN MORE</button>
                 </div>
                 <div>
-                    <img src="'..\images\dining\dining_riversidepearl.jpg'" alt="Riverside Pearl Restaurant">
+                    <img src="..\images\dining\dining_riversidepearl.png" alt="Riverside Pearl Restaurant">
                 </div>
             </div>
 
             <div class="dining-layout-reverse">
                 <div>
-                    <img src="..\images\dining\dining_gardenlounge.jpg" alt="Garden Lounge">
+                    <img src="..\images\dining\dining_gardenlounge.png" alt="Garden Lounge">
                 </div>
                 <div class="dining-text">
                     <h3>Garden Lounge</h3>
@@ -101,47 +101,42 @@
                     <button>LEARN MORE</button>
                 </div>
                 <div>
-                    <img src="..\images\dining\dining_moonlightbar.jpg" alt="Moonlight Bar">
+                    <img src="..\images\dining\dining_moonlightbar.png" alt="Moonlight Bar">
                 </div>
             </div>
         </section>
     </main>
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>DIAMOND LAND HOTEL</h4>
+            <div class="footer-infor">
+                <h3>DIAMOND LAND HOTEL</h3>
                 <p>Han Thuyen Street, Thu Duc Ward, Ho Chi Minh City, Vietnam</p>
                 <p>Tel: +84 (0) 28 1234 0000</p>
                 <p>Email: info@diamondland.com</p>
             </div>
 
-            <div class="footer-column">
-                <h4>ABOUT</h4>
-                <ul>
-                    <li><a href="">ABOUT DIAMOND LAND</a></li>
-                    <li><a href="">CAREER</a></li>
-                    <li><a href="">CONTACT US</a></li>
-                </ul>
+            <div class="footer-about">
+                <h3>ABOUT</h3>
+                <a href="">ABOUT DIAMOND LAND</a>
+                <a href="">CAREER</a>
+                <a href="">CONTACT US</a>
             </div>
 
-            <div class="footer-column">
-                <h4>INQUIRIES</h4>
-                <ul>
-                    <li><a href="">MAKE A RESERVATION</a></li>
-                    <li><a href="">ROOMS</a></li>
-                    <li><a href="">PLAN AN EVENT</a></li>
-                    <li><a href="">PRE-ARRIVAL REFERENCES</a></li>
-                </ul>
+            <div class="footer-inquiries">
+                <h3>INQUIRIES</h3>
+                <a href="">MAKE A RESERVATION</a>
+                <a href="">ROOMS</a>
+                <a href="">PLAN AN EVENT</a>
+                <a href="">PRE-ARRIVAL REFERENCES</a>
             </div>
 
-            <div class="footer-column">
-                <h4>LET’S KEEP IN TOUCH</h4>
+            <div class="footer-social">
+                <h3>LET’S KEEP IN TOUCH</h3>
                 <p>Follow us on social media</p>
                 <div class="footer-social">
                     <i class="fa-brands fa-square-facebook"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
-        </div>
     </footer>
 </body>
+</html>
