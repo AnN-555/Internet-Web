@@ -34,25 +34,25 @@ h1, h2, h3 {
 /* Navigation */
 .nav {
     display: flex;
-    font-size: 20px;
+    font-size: 1.25rem;
     width: 100%;
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 4.2vw;
     background-color: #EBE3D7;
     z-index: 999;
 }
 
 .menu-logo,
 .booking {
-    margin: 0 90px;
+    margin: 0 4.6vw;
 }
 
 .menu-list ul {
     list-style: none;
     display: flex;
-    gap: 220px;
+    gap: 11.4vw;
 }
 
 .menu-list li a {
@@ -64,7 +64,7 @@ h1, h2, h3 {
 }
 
 .menu-logo img {
-    height: 80px;
+    height: 4.2vw;
     width: auto;
 }
 
@@ -88,7 +88,7 @@ h1, h2, h3 {
 
 /* Gạch xuất hiện */
 .menu-list li a:hover::after {
-    width: 150px;
+    width: 7.8vw;
 }
 
 .booking {
@@ -98,11 +98,11 @@ h1, h2, h3 {
 
 .reserve-button {
     text-decoration: none;
-    margin-right: 50px;
-    padding: 0 38px;
+    margin-right: 2.6vw;
+    padding: 0 2vw;
     border-radius: 5px;
-    width: 150px;
-    height: 50px;
+    width: 7.8vw;
+    height: 2.6vw;
     color: #fff;
     background-color: #212322;
     display: flex;
@@ -129,14 +129,15 @@ h1, h2, h3 {
     display: grid;
     place-items: center;
     position: relative;
+    width: 100vw;
 }
 
 .banner img{
-    width: 100%;
+    width: 100vw;
 }
 
 .banner h1 {
-    font-size: 60px;
+    font-size: 3.125vw;
     font-weight: 400;
     color: #fff;
     position: absolute;
@@ -147,7 +148,7 @@ h1, h2, h3 {
 
 .banner p {
     font-family: 'Old Standard TT', serif;
-    font-size: 50px;
+    font-size: 2.6vw;
     font-weight: 400;
     color: #fff;
     position: absolute;
@@ -161,34 +162,39 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 880px;
+    height: 45.8vw;
 }
 
 .intro h2 {
-    font-size: 23px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #9B8D5F;
     text-transform: uppercase;
     text-align: center;
     line-height: normal;
-    margin-top: 50px;
+    margin-top: 2vw;
 }
 
 .intro p {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.70);
-    width: 990px;
+    width: 52vw;
     text-align: center;
     line-height: normal;
-    margin-top: 15px;
+    margin-top: 0.8vw;
 }
 
 .images {
     display: flex;
     justify-content: space-between;
-    gap: 60px;
-    margin-top: 45px;
+    gap: 3.125vw;
+    margin-top: 2.3vw;
+}
+
+.images img {
+    width: 30%;
+    height: auto;
 }
 
 /* Information */
@@ -202,9 +208,9 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content:space-between;
-    height: 880px;
-    gap: 80px;
-    padding: 260px;
+    height: 45.8vw;
+    gap: 4.1vw;
+    padding: 13.5vw;
 }
 
 .dining-layout {
@@ -212,34 +218,34 @@ h1, h2, h3 {
 }
 
 .dining-text h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     font-style: normal;
-    margin-bottom: 20px;
+    margin-bottom: 1vw;
     position: relative;
     line-height: normal;
 }
 
 .dining-text p {
     color: #212322;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 300;
     font-style: normal;
-    margin-bottom: 30px;
-    line-height: 30px;
-    width: 440px;
+    margin-bottom: 1.5vw;
+    line-height: 1.5vw;
+    width: 23vw;;
 }
 
 .dining-text i {
     color: #9B8D5F;
-    font-size: 24px;
-    margin-right: 15px;
+    font-size: 1.5rem;
+    margin-right: 0.8vw;
 }
 
 .dining-text h3::after {
     content: "";
     position: absolute;
-    width: 100px;
+    width: 5.2vw;
     height: 2px;
     left: 0;
     bottom: -7px;
@@ -249,11 +255,11 @@ h1, h2, h3 {
 
 .dining-text button{
     font-family: 'Old Standard TT', serif;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 400;
     display: flex;
-    width: 200px;
-    height: 35px;
+    width: 10.4vw;
+    height: 1.8vw;
     align-items: center;
     justify-content: center;
     color: #9B8D5F;
@@ -272,34 +278,34 @@ h1, h2, h3 {
 .footer {
     display: flex;
     justify-content: space-around;
-    height: 400px;
+    height: 20.8vw;
     background-color: #EBE3D7;
-    padding: 120px 0;
+    padding: 6.25vw 0;
 }
 
 .footer h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     font-style: normal;
-    margin-bottom: 30px;
+    margin-bottom: 1.6vw;
 }
 
 .footer p {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
     font-style: normal;
-    margin-bottom: 20px;
+    margin-bottom: 1.6vw;
 }
 
 
 .footer a {
-    font-size: 16px;
+    font-size: 1rem;
     display: block;
     color: #212322;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 1.6vw;
 }
 
 .footer .fa-brands {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
