@@ -34,30 +34,30 @@ h2 {
 
 /*Navigation*/
 .nav {
-    font-size: 20px;
+    font-size: 1.25rem;
     width: 100%;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 4.2vw;
     background-color: #EBE3D7;
     z-index: 999;
 }
 
 .menu-logo,
 .booking {
-    margin: 0 90px;
+    margin: 0 4.6vw;
 }
 
 .menu-list ul {
     list-style: none;
     display: flex;
-    gap: 220px;
+    gap: 11.4vw;
 }
 
 .menu-logo img {
-    height: 80px;
+    height: 4.2vw;
     width: auto;
 }
 
@@ -89,7 +89,7 @@ h2 {
 
 /* Gạch xuất hiện */
 .menu-list li a:hover::after {
-    width: 150px;
+    width: 7.8vw;
 }
 
 .booking {
@@ -99,16 +99,16 @@ h2 {
 
 .reserve-button {
     text-decoration: none;
-    margin-right: 50px;
+    margin-right: 2.6vw;
     color: #fff;
     background-color: #212322;
-    padding: 0 38px;
+    padding: 0 2vw;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 50px;
+    width: 7.8vw;
+    height: 2.6vw;
 }
 
 .reserve-button:hover {
@@ -123,19 +123,20 @@ h2 {
 
 /*Banner*/
 .banner img {
-    width: 100%;
+    width: 100vw;
 }
 
 .banner {
     display: grid;
     place-items: center;
     position: relative;
+    width: 100vw;
 }
 
 .banner h1 {
     position: absolute;
     top: 41%;
-    font-size: 60px;
+    font-size: 3.125vw;
     font-weight: 400;
     color: #fff;
     text-transform: uppercase;
@@ -146,7 +147,7 @@ h2 {
     position: absolute;
     bottom: 42%;
     font-family: 'Old Standard TT', serif;
-    font-size: 50px;
+    font-size: 2.6vw;
     font-weight: 400;
     color: #fff;
     text-transform: capitalize;
@@ -161,26 +162,26 @@ h2 {
 
 .about-us-text p {
     color: #212322;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 300;
-    line-height: 30px;
-    width: 440px;
+    line-height: 1.875rem;
+    width: 23vw;
 }
 
 .about-us-text h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     font-style: normal;
     line-height: normal;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 1vw;
 }
 
 .about-us-text h2::after {
     content: "";
     position: absolute;
-    width: 100px;
+    width: 5.2vw;
     height: 2px;
     left: 0;
     bottom: -7px;
@@ -194,51 +195,314 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 880px;
-    gap: 80px;
-    padding: 260px;
+    height: 45.8vw;
+    gap: 4.1vw;
+    padding: 13.5vw;
 }
 
- .about-us-layout {
+.about-us-layout {
     background-color: rgba(235, 227, 215, 0.33);
- }
+}
 
- /* footer */
- .footer {
+/* footer */
+.footer {
     display: flex;
     justify-content: space-around;
-    height: 400px;
+    height: auto;
     background-color: #EBE3D7;
-    padding: 120px 0;
- }
+    padding: 6.25vw 0;
+}
 
- .footer h2 {
-    font-size: 18px;
+.footer h2 {
+    font-size: 1.125rem;
     font-weight: bold;
     font-style: normal;
-    margin-bottom: 30px;
- }
+    margin-bottom: 1.6vw;
+}
 
- .footer p {
-    font-size: 16px;
+.footer p {
+    font-size: 1rem;
     font-weight: 300;
     font-style: normal;
-    margin-bottom: 20px;
- }
+    margin-bottom: 1.6vw;
+}
 
- .footer a {
+.footer a {
     display: block;
-    font-size: 16px;
+    font-size: 1rem;
     color: #212322;
     text-decoration: none;
-    margin-bottom: 20px;
- }
+    margin-bottom: 1.6vw;
+}
 
- .footer .fa-brands {
-    font-size: 40px;
- }
+.footer .fa-brands {
+    font-size: 2.5rem;
+}
 
- .nav .fa-bars {
+#hamburger,
+#close {
     display: none;
- }
+}
 
+/* Responsive media và max width 900px */
+@media screen and (max-width: 900px) {
+    .nav {
+        width: 100%;
+        height: 8vw;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: fixed;
+        font-size: 1rem;
+        padding: 0 20px;
+        background-color: #EBE3D7;
+        z-index: 999;
+    }
+
+    /* Hiện hamburger, ẩn close */
+    #hamburger {
+        display: block;
+        font-size: 1.75rem;
+        cursor: pointer;
+        color: #212322;
+        z-index: 1001;
+        margin-right: 15px;
+        order: 1;
+    }
+
+    .menu-logo {
+        order: 2;
+        margin-left: 15px;
+        flex-shrink: 0;
+    }
+
+    .menu-logo img {
+        height: 8vw;
+    }
+
+    .menu-list {
+        order: 3;
+        display: none;
+    }
+
+    .booking {
+        order: 4;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .reserve-button {
+        padding: 0 15px;
+        width: auto;
+        height: 2rem;
+    }
+
+    #close {
+        display: none;
+        position: fixed;
+        right: 2vw;
+        top: 2vw;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #212322;
+        z-index: 1002;
+    }
+
+    /* fullscreen khi mở menu */
+    .menu-list.menu-open {
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: #EBE3D7;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 20px;
+        top: 0;
+        left: 0;
+    }
+
+    .menu-list.menu-open ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-list.menu-open li {
+        width: 100%;
+        border-bottom: 1px solid #212322;
+    }
+
+    .menu-list.menu-open li:first-child {
+        border-top:  1px solid #212322;
+    }
+
+    .menu-list.menu-open li a {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #212322;
+        font-size: 1.5rem;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .menu-list.menu-open li a:hover {
+        background-color: rgba(198, 170, 118, 0.2);
+        color: #C6AA76;
+    }
+
+    .menu-list.menu-open li a::after {
+        display: none;
+    }
+
+    /* Information */
+    .about-us-layout,
+    .about-us-layout-reverse {
+        display: flex;
+        flex-direction: column;
+        height: 90vw;
+        gap: 4vw;
+        padding-top: 7vw;
+        padding-bottom: 7vw;
+    }
+
+    .about-us-layout-reverse .about-us-text {
+        order: 2;
+    }
+
+    .about-us-text p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        width: 60vw;
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    .about-us-text h2 {
+        font-size: 1.25rem;
+        position: relative;
+        text-align: center;
+    }
+
+    .about-us-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10vw;
+    }
+
+    /* footer */
+    .footer {
+        height: auto;
+        width: 100vw;
+    }
+
+    .footer h2 {
+        font-size: 1rem;
+    }
+
+    .footer p,
+    .footer a {
+        font-size: 0.75rem;
+    }
+
+    .footer .fa-brands {
+        font-size: 1.75rem;
+    }
+}
+
+/* Responsive media và max width 48px */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .nav {
+        font-size: 0.85rem;
+        height: 10vw;
+        padding: 0 15px;
+    }
+
+    .menu-logo img {
+        height: 10vw;
+    }
+
+    #hamburger {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    .reserve-button {
+        padding: 0 15px;
+        font-size: 0.75rem;
+        height: 1.5rem;
+    }
+
+    .booking .icons {
+        font-size: 0.75rem;
+    }
+
+    .menu-list.menu-open li a {
+        font-size: 1.25rem;
+        padding: 15px;
+    }
+
+    .about-us-layout,
+    .about-us-layout-reverse {
+        height: auto;
+        gap: 3vw;
+        padding: 5vw 7vw;
+    }
+
+    .about-us-layout-reverse .about-us-text {
+        order: 2;
+    }
+
+    .about-us-text p {
+        font-size: 0.85rem;
+        line-height: 1.4rem;
+        width: 70vw;
+        padding-top: 10px;
+    }
+
+    .about-us-text h2 {
+        font-size: 1.15rem;
+    }
+
+    .about-us-text h2::after {
+        width: 15vw;
+    }
+
+    .footer {
+        height: auto;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2vw;
+    }
+
+    .footer h2 {
+        font-size: 1rem;
+        margin-bottom: 1.5vw;
+    }
+
+    .footer p,
+    .footer a {
+        font-size: 0.75rem;
+        margin-bottom: 1.5vw;
+    }
+
+    .footer .fa-brands {
+        font-size: 1.5rem;
+    }
+}
