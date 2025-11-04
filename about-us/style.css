@@ -43,6 +43,9 @@ h2 {
     height: 4.2vw;
     background-color: #EBE3D7;
     z-index: 999;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    top: 0;
 }
 
 .menu-logo,
@@ -53,7 +56,8 @@ h2 {
 .menu-list ul {
     list-style: none;
     display: flex;
-    gap: 11.4vw;
+    gap: clamp(3vw, 8vw, 10vw);
+    flex-wrap: nowrap;
 }
 
 .menu-logo img {
@@ -67,6 +71,7 @@ h2 {
     color: #212322;
     text-align: center;
     transition: all 0.5s ease;
+    white-space: nowrap;
 }
 
 /* Đường gạch ẩn ban đầu */
@@ -107,8 +112,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 7.8vw;
-    height: 2.6vw;
+    width: clamp(100px, 8vw, 150px);
+    height: clamp(30px, 2.6vw, 45px);
 }
 
 .reserve-button:hover {
@@ -131,6 +136,7 @@ h2 {
     place-items: center;
     position: relative;
     width: 100vw;
+    margin-top: 4.2vw;
 }
 
 .banner h1 {
@@ -195,7 +201,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 45.8vw;
+    height: auto;
+    min-height: 45vw;
     gap: 4.1vw;
     padding: 13.5vw;
 }
@@ -243,6 +250,7 @@ h2 {
 #close {
     display: none;
 }
+
 
 /* Responsive media và max width 900px */
 @media screen and (max-width: 900px) {
@@ -370,7 +378,8 @@ h2 {
     .about-us-layout-reverse {
         display: flex;
         flex-direction: column;
-        height: 90vw;
+        height: auto;
+        min-height: 90vw;
         gap: 4vw;
         padding-top: 7vw;
         padding-bottom: 7vw;
@@ -420,8 +429,8 @@ h2 {
     }
 }
 
-/* Responsive media và max width 48px */
-@media screen and (max-width: 480px) {
+/* Responsive media và max width 550px */
+@media screen and (max-width: 550px) {
     html {
         font-size: 14px;
     }
