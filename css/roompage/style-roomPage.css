@@ -42,13 +42,6 @@ p {
     grid-area: hamber-btn;
 
     }
-
-.calender {
-    font-size: 25px;
-    display: none;
-    grid-area: calender;
-    }
-
 .header__main-nav {
     position: static !important;
     grid-area: main-nav;
@@ -138,13 +131,14 @@ p {
 
 .header__secondary-nav li:first-child {
     background-color: #212322;
-    padding: 8px 38px;
+    /* padding: 8px 38px; */
+    padding: clamp(6px, 0.5vw, 8px) clamp(22px, 2vw, 38px);
     border-radius: 5px;
 }
 
 .header__secondary-nav li:first-child a {
     color: #fff;
-    font-size: 16px;
+    font-size: clamp(12px, 0.85vw, 16px);
 }
 
 .header__secondary-nav li:last-child {
@@ -156,7 +150,18 @@ p {
     position: relative;
     padding-top: 50%;
     margin-top: 80px;
-    background: url('/room-pages/asset/images/Group16.png') top center / cover no-repeat;
+    background: url('/images/rooms/room-banner.png') top center / cover no-repeat;
+}
+.banner__home h1 {
+    position: absolute;
+    display: flex;
+    font-size: clamp(12px, 3.2vw, 65px);
+    text-align: center;
+    color: #fff;
+    font-weight: 200;
+    top:47%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Amenities layout */
@@ -466,7 +471,7 @@ p {
     .header__respon {
         display: grid;
         align-items: center;
-        grid-template-areas: "hamber-btn logo calender";
+        grid-template-areas: "hamber-btn logo secondary-nav";
         column-gap: 2.5rem;
         padding-right: max(1rem, 50% - 620px);
         padding-left: max(1rem, 50% - 620px);
@@ -482,21 +487,17 @@ p {
         display: none;
     }
 
-    .header__secondary-nav {
-        display: none;
-    }
-
     .hamber-btn {
         display: block;
         justify-self: start;
         grid-area: hamber-btn;
     }
 
-    .calender {
-        display: block;
-        grid-area: calender;
-        justify-content: flex-end;
-        justify-self: end;
+    .header__secondary-nav li:nth-child(2) {
+        display: none;
+    }
+     .header__secondary-nav li:nth-child(3) {
+        display: none;
     }
 
     .room-deluxe, .room-superior, .room-president {
