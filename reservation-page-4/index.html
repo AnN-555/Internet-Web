@@ -1,130 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reservation Page 4</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="top-page">
-      <div class="language-selection">
-        <!--top right to choose language-->
-        <select class="language-style">
-          <option>EN</option>
-          <option>VIE</option>
-        </select>
-      </div>
-    </nav>
-    <!--track your phase-->
-    <div class="phase">
-      <ul>
-        <li>DESTINATION</li>
-        <li>
-          <img
-            src="../images/reservation-page-2/number_2.png"
-            alt="step 2"
-            style="height: 20px"
-          />ROOMS
-        </li>
-        <li>
-          <img
-            src="../images/reservation-page-2/number_3.png"
-            alt="step 3"
-            style="height: 20px"
-          />SPECIAL REQUEST
-        </li>
-        <li>
-          <img
-            src="../images/reservation-page-2/number_4.png"
-            alt="step 4"
-            style="height: 20px"
-          />CONFIRM
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-        <h1>Confirm your reservation</h1>
-    </div>
 
-    <section class="reservation-form">
-        <h2>Your details</h2>
-        <p>All fields are required</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation Page 4</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
 
-        <div class="form-group title-group">
-            <label>Title</label>
-            <div class="radio-group">
+<body>
+  <nav class="top-page">
+    <div class="language-selection">
+      <!--top right to choose language-->
+      <select class="language-style">
+        <option>EN</option>
+        <option>VIE</option>
+      </select>
+    </div>
+  </nav>
+  <!--track your phase-->
+  <div class="phase">
+    <ul>
+      <li>
+        <img src="../../images/reservation/reservation-page-2/checkbox.png" alt="step 1" style="height: 20px" />
+        DESTINATION
+      </li>
+      <li></li>
+      <li>
+        <img src="../../images/reservation/reservation-page-2/checkbox.png" alt="step 2" style="height: 20px" />ROOMS
+      </li>
+      <li></li>
+      <li>
+        <img src="../../images/reservation/reservation-page-2/checkbox.png" alt="step 3" style="height: 20px" />SPECIAL
+        REQUEST
+      </li>
+      <li></li>
+      <li class="upcoming__phase">
+        <img src="../../images/reservation/reservation-page-2/number_4.png" alt="step 4" style="height: 20px" />CONFIRM
+      </li>
+    </ul>
+  </div>
+  <h1>Confirm your reservation</h1>
+  <div class="container">
+    <div class="detail_box">
+      <h2>Your detail</h2>
+      <p>All fields are required</p>
+      <form>
+        <div class="input-group">
+          <h2>Title</h2>
+          <div class="radio-group">
             <label><input type="radio" name="title"> Mr</label>
             <label><input type="radio" name="title"> Ms</label>
             <label><input type="radio" name="title"> Mrs</label>
-            </div>
+          </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group">
+        <div class="input-row">
+          <div class="input-group">
             <label>First name</label>
-            <input type="text">
-            </div>
-            <div class="form-group">
+            <input type="text" />
+          </div>
+          <div class="input-group">
             <label>Last name</label>
-            <input type="text">
-            </div>
+            <input type="text" />
+          </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group">
+        <div class="input-row">
+          <div class="input-group small">
             <label>Code</label>
             <select>
-                <option>VN +84</option>
-                <option>US +1</option>
-                <option>JP +81</option>
+              <option>VN +84</option>
+              <option>US +1</option>
+              <option>JP +81</option>
             </select>
-            </div>
-            <div class="form-group">
+          </div>
+          <div class="input-group large">
             <label>Phone number</label>
             <input type="text">
-            </div>
-            <div class="form-group">
-            <label>Email address</label>
-            <input type="email">
-            </div>
+          </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group">
+        <div class="input-row">
+          <div class="input-group">
+            <label>Email</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
             <label>City</label>
             <input type="text">
-            </div>
-            <div class="form-group">
+          </div>
+          <div class="input-group">
             <label>Country</label>
             <select>
-                <option>Vietnam</option>
-                <option>Japan</option>
-                <option>USA</option>
+              <option>Vietnam</option>
+              <option>Japan</option>
+              <option>USA</option>
             </select>
-            </div>
+          </div>
         </div>
+        <p></p>
 
-        <div class="form-checkbox">
-            <label><input type="checkbox"> * I will present a valid ID during check in</label>
-        </div>
-
-        <div class="form-checkbox">
-            <label>
-            <input type="checkbox"> * I have read and agree to 
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" /> * I will present a valid ID during check in
+          </label>
+          <label>
+            <input type="checkbox" /> * I have read and agree to
             <a href="#">Terms & Conditions</a>.
-            <br>For details of how we process your personal data please refer to our 
-            <a href="#">Privacy Policy</a>.
-            </label>
+            <span class="subtext">
+              For details of how we process your personal data please refer to our
+              <a href="#">Privacy Policy</a>.
+            </span>
+          </label>
         </div>
+        <button type="submit" class="continue-btn">CONTINUE TO RESERVE</button>
 
-        <button class="submit-btn">CONTINUE TO RESERVE</button>
-    </section>
+      </form>
+    </div>
 
-    </body>
+    <div class="stay_box">
+      <h2>Your stay</h2>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/location.png" alt="image location" style="height: 20px" />
+        Thu Duc Ward, Ho Chi Minh City, Vietnam
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/calender.png" alt="image calender" style="height: 20px" />
+        26 Sep 2025 - 27 Sep 2025 (1 Night)
+      </div>
+      <div class="stay-box-image">
+        <img src="../../images/reservation/reservation-page-2/deluxe-room.jpg" alt="Image Deluxe Room" />
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/room.png" alt="image room" style="height: 20px" />
+        Deluxe Room
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/people.png" alt="image people" style="height: 20px" />
+        1 Room - 2 Guests
+      </div>
+      <div class="stay-box-detail">RATE DETAILS</div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/check.png" alt="image info" style="height: 20px" />
+        Buffet breakfast included
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/info.png" alt="image info" style="height: 20px" />
+        Reservation must be cancelled 3 days prior to arrival to avoid penalty
+        of 100% stay including tax
+      </div>
+      <div class="stay-box-detail">
+        <img src="../../images/reservation/reservation-page-3/info.png" alt="image info" style="height: 20px" />
+        Reservation must be guaranteed with a valid credit card
+      </div>
+      <span class="subtext">exc. taxes & fees</span>
+      <span class="subtext">Taxes & fees</span>
+      <span class="subtext">Total cost</span>
+
+      <hr />
+
+      <h2>Best Price Guarantee</h2>
+      <p>
+        When you book directly with Dinamond Land Hotel, you can be sure that
+        you are getting the best publicly available price on the room of your
+        choice.
+      </p>
+
+
+    </div>
+  </div>
+</body>
