@@ -21,18 +21,28 @@
     } */
 </style>
 <body>
-    <div class="header__wrapper header__respon">
+   <div class="header__wrapper header__respon">
         <div class="hamber-btn">
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="header__main-nav">
             <nav class="header__link">
                 <ul class="contents">
-                     <li class="item">
+                    <li class="item">
                         <a href="#">HOME</a>
                     </li>
-                    <li class="item active">
-                        <a class="active" href="/room-pages/roomPages.html">ROOMS</a>
+                    <li class="item active sub">
+                        <a class="active" href="/room-pages/roomPages.html">ROOMS <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="sub-menu">
+                            <div class="sub-distance">
+                                <li><a href="/room-pages/room-deluxe.html">DELUXE ROOM</a></li>
+                                <li><a href="/room-pages/room-twin.html">DELUXE TWIN ROOM</a></li>
+                                <li><a href="/room-pages/room-superior.html">SUPERIOR ROOM</a></li>
+                                <li><a href="/room-pages/room-dinamond.html">DINAMOND SUITE</a></li>
+                                <li><a href="/room-pages/room-president.html">PRESIDENT SUITE</a></li>
+                            </div>
+                            
+                        </ul>
                     </li>
                     <li class="item">
                         <a href="#">DINING</a>
@@ -57,12 +67,11 @@
     <div class="overlay"></div>
     <nav class="side__bar">
         <i class="fa-solid fa-xmark close-btn"></i>
-        
         <ul class="content">
             <li class="item">
                 <a href="#">HOME</a>
             </li>
-            <li class="item active">
+            <li class="item active sub">
                  <a class="active" href="/room-pages/roomPages.html">ROOMS</a>
             </li>
             <li class="item">
@@ -71,7 +80,12 @@
             <li class="item">
                 <a href="#">ABOUT US</a>
             </li>
-         </ul>
+        </ul>
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+        </div>
+        
     </nav>
     <!-- Banner layout -->
     <div class="banner__room president">
