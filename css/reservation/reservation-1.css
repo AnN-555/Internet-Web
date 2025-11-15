@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: #f5f0eb;
+}
+h1 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 12vh;
+}
+h2 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+  font-size: clamp(0.68rem, 2.5vw, 1.35rem);
+}
+h3 {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-size: clamp(0.68rem, 1.5vw, 1.4rem);
+}
+.language-selection {
+  text-align: right;
+  font-size: 1em;
+  display: block;
+  background-color: #ebe3d7;
+}
+nav.top-page {
+  text-align: center;
+  text-decoration: none;
+  background-image: url("../../images/homepage/home_icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5vh;
+  background-color: #ebe3d7;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 5vw;
+}
+.language-style {
+  background: transparent;
+  border: 0;
+}
+.phase ul {
+  color: black;
+  list-style: none;
+  font-size: clamp(0.6rem, 2.8vw, 1.11rem);
+  text-decoration: underline;
+  display: flex;
+  background-color: #faf8f5;
+  justify-content: center;
+  height: 5vh;
+  align-items: center;
+  gap: 1vw;
+}
+.phase li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.upcoming__phase {
+  opacity: 0.5;
+}
+.phase li:nth-child(even) {
+  width: 40px;
+  height: 1px;
+  background-color: #cdcfce;
+}
+.room-type {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 2em;
+}
+.step__detail p {
+  font-size: clamp(0.4rem, 1.1vw, 0.85rem);
+}
+.step__highlight {
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
+}
+.container {
+  margin-top: 3vh;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-self: center;
+  width: 70%;
+  height: 82vh;
+}
+.step__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6vh;
+  background-color: #faf7f4;
+}
+.step__detail h3 {
+  margin-left: 10%;
+}
+.step__detail > div {
+  height: 6vh;
+}
+.divider {
+  width: 1px;
+  height: auto;
+  background-color: #ccc;
+}
+.date-box > .divider {
+  height: 40px;
+}
+.confirm__btn {
+  margin-top: 4vh;
+  border: none;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border-radius: 0.5vh;
+  width: 80%;
+  place-self: center;
+  background-color: rgba(33, 35, 34, 0.2);
+  font-size: clamp(0.45rem, 1.5vw, 1.5rem);
+  color: #fff;
+}
+.confirm__btn:disabled {
+  opacity: 0.5;
+}
+
+.confirm__btn:not(:disabled) {
+  border: 1px solid #212322;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #212322;
+  cursor: pointer;
+}
+.single__option__btn {
+  display: flex;
+  border-color: #212322;
+  padding: 1vh;
+  border-radius: 1vh;
+  justify-content: space-between;
+  width: 80%;
+  justify-self: center;
+  background-color: #ffffff;
+  height: 100%;
+  align-items: center;
+}
+.step__detail img {
+  max-height: 2vh;
+  max-width: 2vw;
+}
+.button__info {
+  justify-items: baseline;
+  align-self: center;
+}
+.room__selection .button__info {
+  display: flex;
+  justify-content: space-between;
+  width: 10vw;
+}
+.button__info .amount {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3vw;
+}
+.calendar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.calendar-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  background: none;
+}
+.calendar-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.calendar-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 0.5vh;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.date-box {
+  display: flex;
+  border: 1px solid #212322;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-right: 1vh;
+  border-radius: 1vh;
+  gap: 0.5vw;
+  justify-content: space-between;
+  width: 75%;
+  background-color: #ffffff;
+  height: 80%;
+  align-items: center;
+  justify-self: center;
+}
+.info__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  font-size: clamp(0.9rem, 2.2vw, 1.8rem);
+  gap: 1vh;
+}
+.info__detail > span {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.2vw, 1.8rem);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  justify-content: space-between;
+}
+form .divider {
+  width: auto;
+  height: 2px;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  width: 15vw;
+  margin-right: 1rem;
+  /* font-weight: 400; */
+}
+
+.form-row input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  text-align: center;
+}
+.calendar-popup {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 2vw;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 1vw;
+  max-width: 48vw;
+  max-height: 50vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendar-popup input[type="date"] {
+  font-size: 1.2rem;
+  padding: 1vw;
+  width: 100%;
+  max-width: 20vw;
+}
+
+.calendar-popup button {
+  font-size: 1rem;
+  padding: 0.8vw 1.5vw;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+.calendar-popup input[type="date"] {
+  font-size: 1rem;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.location-popup {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #f5f0eb;
+  border: 1px solid #ccc;
+  padding: 2vw;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 1vw;
+  width: 47.5vw;
+  max-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.single__option__btn {
+  position: relative;
+}
+.location-container {
+  position: relative;
+  display: inline-block;
+}
+.location-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.location-popup li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  cursor: pointer;
+  border-bottom: 0.2rem solid #fff;
+}
+.location-popup li:last-child {
+  border-bottom: none;
+}
+.location-container.active {
+  background-color: white;
+}
+.location-popup li:hover {
+  background-color: #f0f0f0;
+}
+#room-popup,
+#location-popup,
+#checkin-popup,
+#checkout-popup {
+  display: none;
+}
+.room-popup {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  max-width: 47.5vw;
+  max-height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+.guest-counter {
+  display: flex;
+  gap: 1rem;
+}
+
+.counter-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.counter button {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
+.counter span {
+  margin: 0 1rem;
+  min-width: 2rem;
+  text-align: center;
+  display: inline-block;
+}
+@media (max-width: 500px) {
+  .calendar-btn .icon,
+  .calendar-btn span {
+    display: none;
+  }
+  .date-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .button__info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .divider {
+    display: none;
+  }
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-row input {
+    width: 100%;
+  }
+  .phase ul li {
+    display: none;
+  }
+
+  .phase ul li:first-child {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .step__detail img {
+    display: none;
+  }
+}
+/* font family */
+.old-standard-tt {
+  font-family: "Old Standard TT", serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.roboto-standard {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}

@@ -14,8 +14,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 4vh;
-  margin-bottom: 10vh;
+  margin: 5vw;
 }
 h2 {
   font-family: "Old Standard TT", serif;
@@ -45,6 +44,13 @@ nav.top-page {
   background: transparent;
   border: 0;
 }
+.detail__select {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  gap: 7vh;
+  margin-bottom: 10vh;
+}
 .room {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -60,6 +66,10 @@ nav.top-page {
   display: flex;
   flex-direction: column;
   gap: 1vh;
+}
+.room__detail > p {
+  padding-right: 10vw;
+  font-size: clamp(0.6rem, 2.4vw, 1rem);
 }
 .room__detail__booking {
   display: flex;
@@ -83,56 +93,9 @@ nav.top-page {
   height: 5vh;
   text-align: center;
   border: 1px solid #212322;
+  border-radius: 0.5vh;
   background: transparent;
   font-size: clamp(0.5rem, 2.2vw, 0.8rem);
-}
-.payment {
-  display: flex;
-  flex-direction: column;
-  max-width: 17vw;
-  padding: 0 1vw;
-  background-color: #faf8f5;
-  box-sizing: border-box;
-}
-.payment h2 {
-  font-size: clamp(0.75rem, 2.5vw, 1.55rem);
-  margin-top: 2vh;
-  text-align: center;
-  font-weight: 400;
-}
-.payment span {
-  font-size: clamp(0.5rem, 2vw, 0.75rem);
-  font-weight: 300;
-  padding-top: 1.5vh;
-}
-.payment p {
-  font-size: clamp(0.5rem, 2vw, 0.78rem);
-  font-weight: 200;
-  margin-top: 1vh;
-}
-.payment__image > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  padding-bottom: 1vh;
-}
-.payment__detail {
-  font-size: clamp(0.5rem, 2vw, 0.75rem);
-  display: flex;
-  flex-direction: row;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-}
-.payment__detail > img {
-  max-width: 1vw;
-  max-height: 1vw;
-  margin-right: 0.7vw;
-}
-.phase {
-  display: flex;
-  justify-content: center;
-  background-color: #faf8f5;
 }
 .phase ul {
   color: black;
@@ -140,6 +103,7 @@ nav.top-page {
   font-size: clamp(0.6rem, 2.8vw, 1.11rem);
   text-decoration: underline;
   display: flex;
+  background-color: #faf8f5;
   justify-content: center;
   height: 5vh;
   align-items: center;
@@ -153,78 +117,37 @@ nav.top-page {
   align-items: center;
   gap: 5px;
 }
-.phase li:nth-child(even) {
-  width: 40px;
-  height: 1px;
-  background-color: #cdcfce;
-}
 .line {
   width: 100%;
   height: 1px;
   background-color: #ccc;
 }
+.phase li:nth-child(even) {
+  width: 40px;
+  height: 1px;
+  background-color: #cdcfce;
+}
 .room-type {
   font-weight: bold;
   font-size: 2em;
 }
-.payment__button {
-  margin-top: 4.5vh;
-  margin-bottom: 2.7vh;
-  height: 3vh;
-  background-color: #212322;
-  color: #ffffff;
-  font-weight: 500;
-  text-align: center;
-  border-radius: 8px;
+.room__detail__booking__price button {
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
-.special__request {
-  max-width: 53vw;
-  display: flex;
-  flex-direction: column;
+
+.room__detail__booking__price button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-.special__request h2 {
-  font-size: clamp(0.85rem, 2.5vw, 1.7rem);
-  font-weight: 700;
-}
-.special__request span {
-  font-size: clamp(0.5rem, 2vw, 0.78rem);
-  margin-top: 1.2vh;
-  font-family: "Old Standard TT", serif;
-}
-.checkbox__option {
-  margin-top: 5.2vh;
-  max-width: 45vw;
-  margin-bottom: 5.2vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5.2vh;
-}
-label {
-  font-size: clamp(0.65rem, 2.3vw, 1.35rem);
-}
-.checkbox__option input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-}
-.commment__box {
-  height: 150px;
-  max-width: 53vw;
-  border: 1px solid #000000;
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  padding-top: 12px;
-  padding-left: 12px;
-}
-.room__sum {
-  display: flex;
-  justify-content: center;
-  gap: 4vw;
-}
-.room__request {
-  display: flex;
-  flex-direction: column;
-  gap: 9vh;
+@media (max-width: 500px) {
+  .phase ul li {
+    display: none;
+  }
+  .phase ul li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 /*font family*/
 .old-standard-tt {
