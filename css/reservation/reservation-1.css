@@ -39,9 +39,9 @@ nav.top-page {
   background-image: url("../../images/homepage/home_icon.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 5vh;
+  background-size: 80px;
   background-color: #ebe3d7;
-  height: 5vh;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -326,6 +326,9 @@ form .divider {
   border-bottom: none;
 }
 .location-container.active {
+  background-color: white;
+}
+.room-container.active {
   background-color: white;
 }
 .location-popup li:hover {
