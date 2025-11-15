@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation Page 1</title>
+    <link href="../css/reservation/reservation-1.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style></style>
+  <body>
+    <nav class="top-page">
+      <div class="language-selection">
+        <!--top right to choose language-->
+        <select class="language-style">
+          <option>EN</option>
+          <option>VIE</option>
+        </select>
+      </div>
+    </nav>
+    <div class="phase">
+      <ul>
+        <li>
+          <img
+            src="../images/reservation/reservation-page-1/number_1.png"
+            alt="step 1"
+            style="height: 20px"
+          />DESTINATION
+        </li>
+        <li></li>
+        <li class="upcoming__phase">
+          <img
+            src="../images/reservation/reservation-page-2/number_2.png"
+            alt="step 2"
+            style="height: 20px"
+          />ROOMS
+        </li>
+        <li></li>
+        <li class="upcoming__phase">
+          <img
+            src="../images/reservation/reservation-page-2/number_3.png"
+            alt="step 3"
+            style="height: 20px"
+          />SPECIAL REQUEST
+        </li>
+        <li></li>
+        <li class="upcoming__phase">
+          <img
+            src="../images/reservation/reservation-page-2/number_4.png"
+            alt="step 4"
+            style="height: 20px"
+          />CONFIRM
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="step__detail">
+        <div class="location-container">
+          <h3>Hotel</h3>
+          <button class="single__option__btn" onclick="toggleLocationPopup()">
+            <div class="button__info">
+              <div class="step__highlight">Vietnam</div>
+              <p>Diamond Land Hotel</p>
+            </div>
+            <img
+              src="../images/reservation/reservation-page-1/bigger.png"
+              alt="pointer"
+            />
+          </button>
+          <div id="location-popup" class="location-popup">
+            <ul>
+              <li onclick="selectLocation('Hanoi')">Ha Noi</li>
+              <li onclick="selectLocation('Ho Chi Minh')">Ho Chi Minh</li>
+              <li onclick="selectLocation('Da Nang')">Da Nang</li>
+              <li onclick="selectLocation('Nha Trang')">Nha Trang</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3>Room & guests</h3>
+          <button
+            class="room__selection single__option__btn"
+            onclick="toggleRoomPopup()"
+          >
+            <div class="button__info">
+              <div class="amount">
+                <p>Adults</p>
+                <p>0</p>
+              </div>
+              <div class="amount">
+                <p>Children</p>
+                <p>0</p>
+              </div>
+            </div>
+            <img
+              src="../images/reservation/reservation-page-1/bigger.png"
+              alt="pointer"
+            />
+          </button>
+          <div id="room-popup" class="room-popup">
+            <div class="guest-counter">
+              <div class="counter-group">
+                <label>Adults</label>
+                <div class="counter">
+                  <button onclick="updateGuestCount('adults', -1)">−</button>
+                  <span id="adult-count">0</span>
+                  <button onclick="updateGuestCount('adults', 1)">+</button>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="counter-group">
+                <label>Children</label>
+                <div class="counter">
+                  <button onclick="updateGuestCount('children', -1)">−</button>
+                  <span id="children-count">0</span>
+                  <button onclick="updateGuestCount('children', 1)">+</button>
+                </div>
+              </div>
+              <button onclick="confirmGuestSelection()">Confirm</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Dates</h3>
+          <div class="date-box">
+            <button class="calendar-btn" onclick="openPopup('checkin-popup')">
+              <span class="icon">📅</span>
+              <p>Check in</p>
+            </button>
+            <div class="divider"></div>
+            <button class="calendar-btn" onclick="openPopup('checkout-popup')">
+              <span class="icon">📅</span>
+              <p>Check out</p>
+            </button>
+
+            <!--Popup-->
+            <div id="checkin-popup" class="calendar-popup">
+              <input
+                type="date"
+                onchange="handleDateChange(event, 'Check-in')"
+              />
+              <button onclick="closePopup('checkin-popup')">Close</button>
+            </div>
+            <div id="checkout-popup" class="calendar-popup">
+              <input
+                type="date"
+                onchange="handleDateChange(event, 'Check-out')"
+              />
+              <button onclick="closePopup('checkout-popup')">Close</button>
+            </div>
+
+            <img
+              src="../images/reservation/reservation-page-1/bigger.png"
+              alt="pointer"
+            />
+          </div>
+        </div>
+        <button class="confirm__btn" id="confirm-btn" disabled>DISCOVER STAY</button>
+      </div>
+      <div class="info__detail">
+        <span>Book Your Stay</span>
+        <form>
+          <div class="form-row">
+            <label for="location-input">Location</label>
+            <input type="text" id="location-input" />
+          </div>
+          <div class="divider"></div>
+          <div class="form-row">
+            <label for="checkin-input">Check-in Date</label>
+            <input type="text" id="checkin-input" readonly />
+          </div>
+          <div class="divider"></div>
+          <div class="form-row">
+            <label for="checkout-input">Check-out Date</label>
+            <input type="text" id="checkout-input" readonly />
+          </div>
+          <div class="divider"></div>
+          <div class="form-row">
+            <label for="guests-input">Guests</label>
+            <input type="number" min="1" id="guests-input" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="../js/reservation/reservation-1.js"></script>
+  </body>
+</html>
