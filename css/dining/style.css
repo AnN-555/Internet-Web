@@ -41,7 +41,7 @@ h3 {
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    height: 4.2vw;
+    height: 80px;
     background-color: #EBE3D7;
     z-index: 999;
     flex-wrap: nowrap;
@@ -70,7 +70,7 @@ h3 {
 }
 
 .menu-logo img {
-    height: 4.2vw;
+    height: 80px;
     width: auto;
 }
 
