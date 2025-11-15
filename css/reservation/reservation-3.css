@@ -32,9 +32,9 @@ nav.top-page {
   background-image: url("../../images/homepage/home_icon.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 5vh;
+  background-size: 80px;
   background-color: #ebe3d7;
-  height: 5vh;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -235,6 +235,32 @@ label {
     display: flex;
     justify-content: center;
     width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .room__sum {
+    flex-direction: column;
+  }
+  .room {
+    max-width: 90%;
+    padding: 5%;
+  }
+  .room__image > img {
+    max-width: 100vw;
+    height: 10vh;
+  }
+  .room__request {
+    gap: 1vh;
+  }
+  .special__request {
+    max-width: 90%;
+    padding: 5%;
+  }
+  .commment__box {
+    max-width: 90%;
+  }
+  .payment {
+    max-width: 100%;
   }
 }
 /*font family*/
