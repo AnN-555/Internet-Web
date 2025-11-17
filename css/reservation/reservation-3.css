@@ -178,6 +178,14 @@ nav.top-page {
   text-align: center;
   border-radius: 8px;
 }
+.payment__button {
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+.payment__button:active {
+  transform: scale(0.95);
+  background-color: #ebe3d7;
+  color: #212322;
+}
 .special__request {
   max-width: 53vw;
   display: flex;
