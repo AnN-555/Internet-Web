@@ -32,13 +32,28 @@ const images = [
   "images/homepage/banner_large/banner5.png",
 ];
 
-  let index = 0;
-  const slideshow = document.getElementById("slideshow");
+let index = 1; // start from second image
+const slideshow = document.getElementById("slideshow");
 
-  function changeImage() {
-    slideshow.src = images[index];   // update src
-    index = (index + 1) % images.length; // loop back to start
-  }
+function changeImage() {
+  // slide current image out to the left
+  slideshow.style.left = "-100%";
 
-  // Change image every 3 seconds
-  setInterval(changeImage, 2000);
+  // after animation ends, swap src and reset position off-screen right
+  setTimeout(() => {
+    slideshow.src = images[index];
+    slideshow.style.left = "0%"; // move new image off-screen right
+
+    // force reflow so transition applies
+    void slideshow.offsetWidth;
+
+    // slide new image into view
+    slideshow.style.left = "0";
+
+    index = (index + 1) % images.length;
+    if(4==index) index = 0;
+  }, 600); // match transition duration
+}
+
+// change every 3 seconds
+setInterval(changeImage, 2000);
