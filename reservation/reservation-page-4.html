@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reservation Page 4</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="../css/reservation/reservation-4.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -54,20 +54,28 @@
         <div class="input-group">
           <h2>Title</h2>
           <div class="radio-group">
-            <label><input type="radio" name="title"> Mr</label>
-            <label><input type="radio" name="title"> Ms</label>
-            <label><input type="radio" name="title"> Mrs</label>
+            <label>
+              <input type="radio" name="title" value="Mr"> Mr
+            </label>
+
+            <label>
+              <input type="radio" name="title" value="Ms"> Ms
+            </label>
+
+            <label>
+              <input type="radio" name="title" value="Mrs"> Mrs
+            </label>
           </div>
         </div>
 
         <div class="input-row">
           <div class="input-group">
             <label>First name</label>
-            <input type="text" />
+            <input type="text" placeholder="First name" />
           </div>
           <div class="input-group">
             <label>Last name</label>
-            <input type="text" />
+            <input type="text" placeholder="Last name" />
           </div>
         </div>
 
@@ -82,21 +90,21 @@
           </div>
           <div class="input-group large">
             <label>Phone number</label>
-            <input type="text">
+            <input type="text" placeholder="Phone number">
           </div>
         </div>
 
         <div class="input-row">
           <div class="input-group">
             <label>Email</label>
-            <input type="text" />
+            <input type="text" placeholder="Email">
           </div>
         </div>
 
         <div class="input-row">
           <div class="input-group">
             <label>City</label>
-            <input type="text">
+            <input type="text" placeholder="City">
           </div>
           <div class="input-group">
             <label>Country</label>
@@ -178,4 +186,5 @@
 
     </div>
   </div>
+  <script src="../js/reservation/reservation-4.js"></script>
 </body>

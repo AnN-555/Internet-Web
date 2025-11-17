@@ -16,8 +16,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 4vh;
-  margin-bottom: 10vh;
+  margin: 5vw;
 }
 
 h2 {
@@ -38,9 +37,9 @@ nav.top-page {
   background-image: url("../../images/homepage/home_icon.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 5vh;
+  background-size: 80px;
   background-color: #ebe3d7;
-  height: 5vh;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -69,7 +68,6 @@ nav.top-page {
   align-items: center;
   gap: 1vw;
 }
-
 
 
 .phase li {
@@ -305,20 +303,15 @@ nav.top-page {
     margin-bottom: 2rem;
   }
 
-  .phase ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    height: auto;
-    text-align: center;
+  .phase ul li {
+    display: none;
+  }
+
+  .phase ul li:nth-child(7) {
+    display: flex;
     justify-content: center;
+    width: 100%;
   }
-
-  .phase li {
-    font-size: clamp(0.6rem, 2.5vw, 1rem);
-    /* co dãn chữ khi màn hình nhỏ */
-  }
-
 
   .container {
     flex-direction: column;
