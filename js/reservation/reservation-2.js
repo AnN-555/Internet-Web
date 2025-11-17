@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const phaseItems = document.querySelectorAll(".phase ul li");
+
+  if (phaseItems.length > 0) {
+
+    phaseItems[0].addEventListener("click", function () {
+      window.location.href = "./reservation-page-1.html";
+    });
+  }
+
+
   const roomButtons = document.querySelectorAll(".room__detail__booking__price button");
 
   roomButtons.forEach((button) => {
