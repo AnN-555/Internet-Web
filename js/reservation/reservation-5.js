@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "./reservation-page-1.html";
         });
 
-
         if (phaseItems.length > 2) {
             phaseItems[2].addEventListener("click", function () {
                 window.location.href = "./reservation-page-2.html";
@@ -15,13 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-
     const location = localStorage.getItem("selectedLocation") || "Thu Duc Ward, Ho Chi Minh City, Vietnam";
     const checkinRaw = localStorage.getItem("checkinDate") || "2025-09-26";
     const checkoutRaw = localStorage.getItem("checkoutDate") || "2025-09-27";
     const checkinDate = new Date(checkinRaw + "T00:00:00");
     const checkoutDate = new Date(checkoutRaw + "T00:00:00");
+
     const formatDate = (date) => date.toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'short',
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const stayDetails = document.querySelectorAll(".stay_box .stay-box-detail");
     if (stayDetails[0]) stayDetails[0].innerHTML = `<img src="../../images/reservation/reservation-page-4/location.png" style="height:20px"> ${location}`;
-    if (stayDetails[1]) stayDetails[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" style="height:20px"> ${datesText}`; // <-- dùng datesText
+    if (stayDetails[1]) stayDetails[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" style="height:20px"> ${datesText}`;
     if (stayDetails[2]) stayDetails[2].innerHTML = `<img src="../../images/reservation/reservation-page-4/room.png" style="height:20px"> ${roomName}`;
     if (stayDetails[3]) stayDetails[3].innerHTML = `<img src="../../images/reservation/reservation-page-4/people.png" style="height:20px"> ${guests}`;
 
@@ -86,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
             `<img src="../../images/reservation/reservation-page-5/location.png" style="height:20px"> ${country}`;
     }
 
-
     const continueBtn = document.querySelector(".continue-btn");
     if (!continueBtn) return;
 
@@ -106,21 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const errors = [];
 
         if (!cardNumber?.value.trim())
-            errors.push("Vui lòng nhập số thẻ");
+            errors.push("Please enter your card number.");
 
         if (!expiry?.value.trim())
-            errors.push("Vui lòng nhập Expiration Date");
+            errors.push("Please enter expiration date.");
         else if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry.value.trim()))
-            errors.push("Sai định dạng MM/YY");
+            errors.push("Invalid format. Please use MM/YY.");
 
         if (!cvv?.value.trim())
-            errors.push("Vui lòng nhập CVV");
+            errors.push("Please enter your CVV.");
 
         if (errors.length > 0) {
-            errorDiv.innerHTML = "<strong>Lỗi:</strong><br>" + errors.join("<br>");
+            errorDiv.innerHTML = "<strong>Error:</strong><br>" + errors.join("<br>");
             errorDiv.style.display = "block";
         } else {
-            alert("Đặt phòng thành công! Cảm ơn quý khách ❤️");
+            alert("Your booking has been successfully completed! ❤️");
         }
     });
 });
