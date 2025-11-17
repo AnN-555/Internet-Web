@@ -20,3 +20,25 @@ document.addEventListener('DOMContentLoaded', function(){
         body.style.overflow = 'auto';
     })
 })
+
+//change images
+// Array of image paths from your folder
+const images = [
+  "images/homepage/banner_large/banner1.png",
+  "images/homepage/banner_large/banner2.png",
+  "images/homepage/banner_large/banner3.png",
+  "images/homepage/banner_large/banner4.png",
+  "images/homepage/banner_large/banner5.png",
+  "images/homepage/banner_large/banner5.png",
+];
+
+  let index = 0;
+  const slideshow = document.getElementById("slideshow");
+
+  function changeImage() {
+    slideshow.src = images[index];   // update src
+    index = (index + 1) % images.length; // loop back to start
+  }
+
+  // Change image every 3 seconds
+  setInterval(changeImage, 2000);
