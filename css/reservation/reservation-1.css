@@ -334,6 +334,14 @@ form .divider {
 .location-popup li:hover {
   background-color: #f0f0f0;
 }
+.confirm__btn {
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+.confirm__btn:active {
+  transform: scale(0.95);
+  background-color: #ebe3d7;
+  color: #212322;
+}
 #room-popup,
 #location-popup,
 #checkin-popup,
