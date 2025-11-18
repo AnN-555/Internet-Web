@@ -1,8 +1,6 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const phaseItems = document.querySelectorAll(".phase ul li");
   if (phaseItems.length > 0) {
-
     phaseItems[0].addEventListener("click", function () {
       window.location.href = "./reservation-page-1.html";
     });
@@ -13,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "./reservation-page-2.html";
     });
   }
-
 
   const checkinRaw = localStorage.getItem("checkinDate") || "2025-09-26";
   const checkoutRaw = localStorage.getItem("checkoutDate") || "2025-09-27";
@@ -34,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     checkoutDate
   )} (${nights} Night${nights > 1 ? "s" : ""})`;
 
-
   const location =
     localStorage.getItem("stay_location") ||
     "Thu Duc Ward, Ho Chi Minh City, Vietnam";
@@ -47,17 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const guests = localStorage.getItem("stay_guests") || "1 Room - 2 Guests";
   const basePrice = localStorage.getItem("stay_basePrice") || "5,000,000 VND";
   const tax = localStorage.getItem("stay_tax") || "500,000 VND";
-  const serviceFee =
-    localStorage.getItem("stay_serviceFee") || "250,000 VND";
+  const serviceFee = localStorage.getItem("stay_serviceFee") || "250,000 VND";
   const total = localStorage.getItem("stay_total") || "5,750,000 VND";
-
 
   const details = document.querySelectorAll(".stay_box .stay-box-detail");
   if (details[0])
     details[0].innerHTML = `<img src="../../images/reservation/reservation-page-4/location.png" alt="" style="height: 20px"> ${location}`;
 
   if (details[1])
-    details[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" alt="" style="height: 20px"> ${datesText || datesStored}`;
+    details[1].innerHTML = `<img src="../../images/reservation/reservation-page-4/calender.png" alt="" style="height: 20px"> ${
+      datesText || datesStored
+    }`;
   if (details[2])
     details[2].innerHTML = `<img src="../../images/reservation/reservation-page-4/room.png" alt="" style="height: 20px"> ${roomName}`;
   if (details[3])
@@ -76,8 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (spans[2]) spans[2].textContent = `Total cost ${total}`;
 
   const continueBtn = document.querySelector(".continue-btn");
-  if (!continueBtn) return; 
-
+  if (!continueBtn) return;
 
   const errorDiv = document.createElement("div");
   errorDiv.style.cssText =
@@ -101,7 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!lastName?.value.trim()) errors.push("Please enter your last name");
     const phone =
       document.querySelector('input[placeholder="Phone number"]') ||
-      (document.querySelectorAll('input[type="text"]')[3] || null);
+      document.querySelectorAll('input[type="text"]')[3] ||
+      null;
     if (!phone?.value.trim()) errors.push("Please enter your phone number");
     else if (!/^\d{8,12}$/.test(phone.value.trim()))
       errors.push("Phone number must contain 8 to 12 digits");
@@ -111,14 +107,15 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (!/^\S+@\S+\.\S+$/.test(email.value.trim()))
       errors.push("Invalid email format");
 
-
     const checkboxEls = document.querySelectorAll(
       ".checkbox-group input[type=checkbox]"
     );
     const checkbox1 = checkboxEls[0];
     const checkbox2 = checkboxEls[1];
     if (!checkbox1?.checked)
-      errors.push("You must confirm that you will present a valid ID during check-in");
+      errors.push(
+        "You must confirm that you will present a valid ID during check-in"
+      );
     if (!checkbox2?.checked)
       errors.push("You must agree to the Terms & Conditions");
 
@@ -129,7 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     let titleText = "";
     if (titleChecked) {
-      titleText = titleChecked.value || (titleChecked.nextElementSibling?.textContent || "").trim();
+      titleText =
+        titleChecked.value ||
+        (titleChecked.nextElementSibling?.textContent || "").trim();
     }
     localStorage.setItem("user_title", titleText || "Mr");
     localStorage.setItem("user_firstName", firstName.value.trim());
@@ -137,19 +136,31 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("user_phone", phone.value.trim());
     localStorage.setItem("user_email", email.value.trim());
 
-    const selects = document.querySelectorAll(".input-row .input-group select, .input-group select");
+    const selects = document.querySelectorAll(
+      ".input-row .input-group select, .input-group select"
+    );
     let country = "Vietnam";
     if (selects && selects.length > 0) {
-
       let found = null;
-      selects.forEach(s => {
-        const parentLabel = s.closest(".input-group")?.querySelector("label")?.textContent?.toLowerCase() || "";
+      selects.forEach((s) => {
+        const parentLabel =
+          s
+            .closest(".input-group")
+            ?.querySelector("label")
+            ?.textContent?.toLowerCase() || "";
         if (parentLabel.includes("country")) found = s;
       });
-      country = (found ? found.value : selects[selects.length - 1].value) || "Vietnam";
+      country =
+        (found ? found.value : selects[selects.length - 1].value) || "Vietnam";
     }
     localStorage.setItem("user_country", country);
     localStorage.setItem("stay_dates", datesText);
     window.location.href = "./reservation-page-5.html";
   });
+  const navTop = document.getElementById("top-page");
+  if (navTop) {
+    navTop.addEventListener("click", function () {
+      window.location.href = "../index.html";
+    });
+  }
 });
