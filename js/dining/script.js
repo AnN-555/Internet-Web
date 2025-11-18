@@ -15,8 +15,18 @@ document.addEventListener('DOMContentLoaded', function(){
     //Ẩn hamburger menu
     close.addEventListener('click', function(){
         close.style.display = 'none';
-        hamburger.style.display = 'block';
+        hamburger.style.display = '';
         menuList.classList.remove('menu-open');
         body.style.overflow = 'auto';
     })
+
+    const breakpoint = 900;
+    const isSmallScreen = window.innerWidth >= breakpoint;
+    
+    if (isSmallScreen){
+        close.addEventListener('resize', function(){
+        close.style.display = 'none';
+    })
+    }
+    
 })
