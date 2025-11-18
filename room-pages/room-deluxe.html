@@ -14,33 +14,32 @@
 </head>
 <body>
     <nav class="nav">
-            <i class="fa-solid fa-bars" id="hamburger"></i>
-            <i class="fa-solid fa-xmark" id="close"></i>
-            <!--logo-->
-            <div class="menu-logo">
-                <a href="..\homePage.html">
-                    <img src="..\images\logo3.png" alt="Dimond Hotel Logo">
-                </a>
+        <i class="fa-solid fa-bars" id="hamburger"></i>
+        <i class="fa-solid fa-xmark" id="close"></i>
+    <!--logo-->
+        <div class="menu-logo">
+            <a href="/homePage.html">
+                <img src="/images/logo3.png" alt="Dimond Hotel Logo">
+            </a>
+        </div>
+                <!--menu-->
+        <div class="menu-list">
+            <ul>
+                <li><a href="/homePage.html">HOME</a></li>
+                <li><a href="/room-pages/roomPages.html">ROOMS</a></li>
+                <li><a href="/dining/index.html">DINING</a></li>
+                <li><a href="/about-us/index.html">ABOUT US</a></li>
+            </ul>
+        </div>
+                <!--booking-->
+        <div class="booking">
+            <a href="/reservation/reservation-page-1.html" class="reserve-button">RESERVE</a>
+            <div class="icons">
+                <p>EN</p>
+            <!-- <i class="fa-solid fa-chevron-down"></i> -->
             </div>
-            <!--menu-->
-            <div class="menu-list">
-                <ul>
-                    <li><a href="..\homePage.html">HOME</a></li>
-                    <li><a href="..\room-pages\roomPages.html">ROOMS</a></li>
-                    <li><a href="..\dining\index.html">DINING</a></li>
-                    <li><a href="..\about-us\index.html">ABOUT US</a></li>
-                </ul>
-            </div>
-            <!--booking-->
-            <div class="booking">
-                <a href="..\reservation\reservation-page-1.html" class="reserve-button">RESERVE</a>
-                <label for="" class="icons">
-                    <p>EN</p>
-                    <!-- <i class="fa-solid fa-chevron-down"></i> -->
-                </label>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
     <!-- Banner layout -->
     <div class="banner__room deluxe">
         <h1>DELUXE ROOM</h1>
@@ -54,19 +53,19 @@
 
     <!-- Slide layout -->
     <div class="slider-container">
-        <div class="slider-wrapper">
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe1.png" alt="Image 1"></div>
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe2.png" alt="Image 2"></div>
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe3.png" alt="Image 3"></div>
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe4.png" alt="Image 4"></div>
+        <div class="img-container">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe1.png" alt="">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe2.png" alt="">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe3.png" alt="">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe4.png" alt="">
         </div>
-        <div class="opacity"></div>
-        <div class="controls-btn">
-            <button class="slider-btn prev-button" id="prevBtn">❮</button>
-            <button class="slider-btn next-button" id="nextBtn">❯</button>
+        <div class="btn__set">
+            <i class="fa-solid fa-angle-left btn prv"></i>
+            <i class="fa-solid fa-angle-right btn nxt"></i>
         </div>
+        
     </div>
-    
+
     <!-- Content layout -->
      <div class="card">
         <div class="card__info">
@@ -97,7 +96,7 @@
                     <span class="col2">Floor 6 to 12</span>
                 </li>
             </ul>
-            <a href="" class="btn-book">RESERVE NOW</a>
+            <a href="/reservation/reservation-page-1.html" class="btn-book">RESERVE NOW</a>
         </div>
         <div class="card__ame">
             <div class="card-tabs">
@@ -145,7 +144,7 @@
                 <h4>Deluxe Twin Room</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>Plush elegance awaits you in our divine Premium Rooms. Embrace yourself in warmth as you....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  35m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  35m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-twin.html" >VIEW DETAILS</a>
@@ -159,7 +158,7 @@
                 <h4>Superior Room</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>Unwind with freshly made coffees straight from the espresso machine in the spacious lounge area....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  40m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  40m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-superior.html" >VIEW DETAILS</a>
@@ -173,7 +172,7 @@
                 <h4>Dinamond Suite</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>Unwind with freshly made coffees straight from the espresso machine in the spacious lounge area....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  50m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  50m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-dinamond.html" >VIEW DETAILS</a>
@@ -187,7 +186,7 @@
                 <h4>President Suite</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>A balance between classic elegance and contemporary convenience gives you absolute privacy and blissful relaxation....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  139m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  139m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-president.html" >VIEW DETAILS</a>
@@ -229,7 +228,7 @@
                 </div>
             </div>
     </footer>
-     <script src="..\js\dining\script.js"></script>
+     <script src="/js/dining/script.js"></script>
      <script src="/js/room/room_main.js"></script>
      <script src="/js/room/room_slide-img.js"></script>
      <script src="/js/room/room_tab.js"></script>
