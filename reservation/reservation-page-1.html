@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation Page 1</title>
     <link
       href="../css/reservation/reservation-1.css"
       rel="stylesheet"
       type="text/css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
-    />
+    >
   </head>
-  <style></style>
   <body>
     <nav class="top-page" id="top-page">
       <div class="language-selection">
@@ -34,7 +33,7 @@
             src="../images/reservation/reservation-page-1/number_1.png"
             alt="step 1"
             style="height: 20px"
-          />DESTINATION
+          >DESTINATION
         </li>
         <li></li>
         <li class="upcoming__phase">
@@ -42,7 +41,7 @@
             src="../images/reservation/reservation-page-2/number_2.png"
             alt="step 2"
             style="height: 20px"
-          />ROOMS
+          >ROOMS
         </li>
         <li></li>
         <li class="upcoming__phase">
@@ -50,7 +49,7 @@
             src="../images/reservation/reservation-page-2/number_3.png"
             alt="step 3"
             style="height: 20px"
-          />SPECIAL REQUEST
+          >SPECIAL REQUEST
         </li>
         <li></li>
         <li class="upcoming__phase">
@@ -58,7 +57,7 @@
             src="../images/reservation/reservation-page-2/number_4.png"
             alt="step 4"
             style="height: 20px"
-          />CONFIRM
+          >CONFIRM
         </li>
       </ul>
     </div>
@@ -67,14 +66,14 @@
         <div class="location-container">
           <h3>Hotel</h3>
           <button class="single__option__btn" onclick="toggleLocationPopup()">
-            <div class="button__info">
-              <div class="step__highlight">Vietnam</div>
-              <p>Diamond Land Hotel</p>
-            </div>
+            <span class="button__info">
+              <span class="step__highlight">Vietnam</span>
+              <span class="button__text">Diamond Land Hotel</span>
+            </span>
             <img
               src="../images/reservation/reservation-page-1/bigger.png"
               alt="pointer"
-            />
+            >
           </button>
           <div id="location-popup" class="location-popup">
             <ul>
@@ -91,20 +90,20 @@
             class="room__selection single__option__btn"
             onclick="toggleRoomPopup()"
           >
-            <div class="button__info">
-              <div class="amount">
-                <p>Adults</p>
-                <p>0</p>
-              </div>
-              <div class="amount">
-                <p>Children</p>
-                <p>0</p>
-              </div>
-            </div>
+            <span class="button__info">
+              <span class="amount">
+                <span>Adults</span>
+                <span>0</span>
+              </span>
+              <span class="amount">
+                <span>Children</span>
+                <span>0</span>
+              </span>
+            </span>
             <img
               src="../images/reservation/reservation-page-1/bigger.png"
               alt="pointer"
-            />
+            >
           </button>
           <div id="room-popup" class="room-popup">
             <div class="guest-counter">
@@ -134,12 +133,12 @@
           <div class="date-box">
             <button class="calendar-btn" onclick="openPopup('checkin-popup')">
               <span class="icon">📅</span>
-              <p>Check in</p>
+              <span>Check in</span>
             </button>
             <div class="divider"></div>
             <button class="calendar-btn" onclick="openPopup('checkout-popup')">
               <span class="icon">📅</span>
-              <p>Check out</p>
+              <span>Check out</span>
             </button>
 
             <!--Popup-->
@@ -147,21 +146,21 @@
               <input
                 type="date"
                 onchange="handleDateChange(event, 'Check-in')"
-              />
+              >
               <button onclick="closePopup('checkin-popup')">Close</button>
             </div>
             <div id="checkout-popup" class="calendar-popup">
               <input
                 type="date"
                 onchange="handleDateChange(event, 'Check-out')"
-              />
+              >
               <button onclick="closePopup('checkout-popup')">Close</button>
             </div>
 
             <img
               src="../images/reservation/reservation-page-1/bigger.png"
               alt="pointer"
-            />
+            >
           </div>
         </div>
         <button class="confirm__btn" id="confirm-btn" disabled>
@@ -173,22 +172,22 @@
         <form>
           <div class="form-row">
             <label for="location-input">Location</label>
-            <input type="text" id="location-input" />
+            <input type="text" id="location-input" >
           </div>
           <div class="divider"></div>
           <div class="form-row">
             <label for="checkin-input">Check-in Date</label>
-            <input type="text" id="checkin-input" readonly />
+            <input type="text" id="checkin-input" readonly >
           </div>
           <div class="divider"></div>
           <div class="form-row">
             <label for="checkout-input">Check-out Date</label>
-            <input type="text" id="checkout-input" readonly />
+            <input type="text" id="checkout-input" readonly >
           </div>
           <div class="divider"></div>
           <div class="form-row">
             <label for="guests-input">Guests</label>
-            <input type="number" min="1" id="guests-input" />
+            <input type="number" min="1" id="guests-input" >
           </div>
         </form>
       </div>
