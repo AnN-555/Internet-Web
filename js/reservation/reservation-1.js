@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navTop = document.getElementById("top-page");
   if (navTop) {
     navTop.addEventListener("click", function () {
-      window.location.href = "../index.html";
+      window.location.href = "../homePage.html";
     });
   }
 });
