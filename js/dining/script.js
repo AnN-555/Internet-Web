@@ -19,4 +19,14 @@ document.addEventListener('DOMContentLoaded', function(){
         menuList.classList.remove('menu-open');
         body.style.overflow = 'auto';
     })
+
+    const breakpoint = 900;
+    const isSmallScreen = window.innerWidth >= breakpoint;
+    
+    if (isSmallScreen){
+        close.addEventListener('resize', function(){
+        close.style.display = 'none';
+    })
+    }
+    
 })

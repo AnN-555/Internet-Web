@@ -131,11 +131,11 @@ h3 {
     display: grid;
     place-items: center;
     position: relative;
-    width: 100vw;
+    width: 100%;
 }
 
 .banner img {
-    width: 100vw;
+    width: 100%;
 }
 
 .banner h1 {
@@ -336,7 +336,6 @@ h3 {
         background-color: #EBE3D7;
         z-index: 999;
     }
-
     /* Hiện hamburger, ẩn close */
     #hamburger {
         display: block;
@@ -402,8 +401,17 @@ h3 {
         padding: 20px;
         top: 0;
         left: 0;
+        animation: fadeIn 0.3s ease-in-out;
     }
 
+    @keyframes fadeIn {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
     .menu-list.menu-open ul {
         width: 100%;
         display: flex;

@@ -21,30 +21,40 @@ function closePopup(popupId) {
 }
 
 function formatDateForDisplay(dateString) {
-
   const date = new Date(dateString);
   const day = date.getDate();
-  const month = date.toLocaleString('vi-VN', { month: 'short' });
+  const month = date.toLocaleString("vi-VN", { month: "short" });
   const year = date.getFullYear();
   return `${day} ${month} ${year}`;
 }
 
 function handleDateChange(event, label) {
-  const selectedDate = event.target.value; 
+  const selectedDate = event.target.value;
 
   if (label === "Check-in") {
     document.getElementById("checkin-input").value = selectedDate;
-    document.querySelector('[data-label="Check-in"] .button__info')?.insertAdjacentHTML('beforeend', 
-      `<span class="selected-date">${formatDateForDisplay(selectedDate)}</span>`);
-    localStorage.setItem('checkinDate', selectedDate);
+    document
+      .querySelector('[data-label="Check-in"] .button__info')
+      ?.insertAdjacentHTML(
+        "beforeend",
+        `<span class="selected-date">${formatDateForDisplay(
+          selectedDate
+        )}</span>`
+      );
+    localStorage.setItem("checkinDate", selectedDate);
     closePopup("checkin-popup");
-  } 
-  else if (label === "Check-out") {
+  } else if (label === "Check-out") {
     document.getElementById("checkout-input").value = selectedDate;
-    document.querySelector('[data-label="Check-out"] .button__info')?.insertAdjacentHTML('beforeend', 
-      `<span class="selected-date">${formatDateForDisplay(selectedDate)}</span>`);
+    document
+      .querySelector('[data-label="Check-out"] .button__info')
+      ?.insertAdjacentHTML(
+        "beforeend",
+        `<span class="selected-date">${formatDateForDisplay(
+          selectedDate
+        )}</span>`
+      );
 
-    localStorage.setItem('checkoutDate', selectedDate);
+    localStorage.setItem("checkoutDate", selectedDate);
     closePopup("checkout-popup");
   }
 
@@ -62,7 +72,7 @@ function toggleLocationPopup() {
 function selectLocation(location) {
   document.querySelector(".step__highlight").textContent = location;
   document.getElementById("location-input").value = location;
-  localStorage.setItem('selectedLocation', location); 
+  localStorage.setItem("selectedLocation", location);
   toggleLocationPopup();
   checkFormCompletion();
 }
@@ -99,12 +109,12 @@ let adults = 0;
 let children = 0;
 
 function updateGuestCount(type, change) {
-  if (type === 'adults') {
+  if (type === "adults") {
     adults = Math.max(0, adults + change);
-    document.getElementById('adult-count').textContent = adults;
-  } else if (type === 'children') {
+    document.getElementById("adult-count").textContent = adults;
+  } else if (type === "children") {
     children = Math.max(0, children + change);
-    document.getElementById('children-count').textContent = children;
+    document.getElementById("children-count").textContent = children;
   }
 }
 
@@ -115,9 +125,9 @@ function confirmGuestSelection() {
     <div class="amount"><p>Children</p><p>${children}</p></div>
   `;
   document.getElementById("guests-input").value = adults + children;
-  localStorage.setItem('adults', adults);
-  localStorage.setItem('children', children);
-  localStorage.setItem('totalGuests', adults + children);
+  localStorage.setItem("adults", adults);
+  localStorage.setItem("children", children);
+  localStorage.setItem("totalGuests", adults + children);
 
   const popup = document.getElementById("room-popup");
   if (popup) popup.style.display = "none";
@@ -134,9 +144,11 @@ function checkFormCompletion() {
   document.getElementById("confirm-btn").disabled = !isComplete;
 }
 
-["location-input", "checkin-input", "checkout-input", "guests-input"].forEach(id => {
-  document.getElementById(id).addEventListener("input", checkFormCompletion);
-});
+["location-input", "checkin-input", "checkout-input", "guests-input"].forEach(
+  (id) => {
+    document.getElementById(id).addEventListener("input", checkFormCompletion);
+  }
+);
 
 document.addEventListener("DOMContentLoaded", function () {
   const confirmBtn = document.getElementById("confirm-btn");
@@ -147,10 +159,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  if (localStorage.getItem('checkinDate')) {
-    document.getElementById("checkin-input").value = localStorage.getItem('checkinDate');
+  if (localStorage.getItem("checkinDate")) {
+    document.getElementById("checkin-input").value =
+      localStorage.getItem("checkinDate");
   }
-  if (localStorage.getItem('checkoutDate')) {
-    document.getElementById("checkout-input").value = localStorage.getItem('checkoutDate');
+  if (localStorage.getItem("checkoutDate")) {
+    document.getElementById("checkout-input").value =
+      localStorage.getItem("checkoutDate");
+  }
+  const navTop = document.getElementById("top-page");
+  if (navTop) {
+    navTop.addEventListener("click", function () {
+      window.location.href = "../index.html";
+    });
   }
 });

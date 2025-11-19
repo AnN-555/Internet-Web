@@ -1,88 +1,56 @@
 // Slide 
+const imgContainer = document.querySelector('.img-container'); 
+const prevBtn = document.querySelector('.prv');      
+const nextBtn = document.querySelector('.nxt');       
 
- document.addEventListener('DOMContentLoaded', () => {
-            const imageWrapper = document.querySelector('.slider-wrapper');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            let images = document.querySelectorAll('.slider-wrapper img');
-            
-            if (images.length <= 1) return;
+let currentPage = 0;
+let totalPages;
+let slideAmountPercent;
 
-            
-            const IMAGE_WIDTH = 1000;
-            const GAP = 40;
-            const CLONES_COUNT = 2; 
-            let currentIndex = CLONES_COUNT; 
-            let isTransitioning = false;
+const breakpoint = 1100;
+function updateSliderSettings() {
+  const isSmallScreen = window.innerWidth <= breakpoint;
 
-            // coppy ảnh đầu và cuối
-            for (let i = 0; i < CLONES_COUNT; i++) {
-                const clone = images[images.length - 1 - i].cloneNode(true);
-                imageWrapper.insertBefore(clone, imageWrapper.firstChild);
-            }
-            
-            for (let i = 0; i < CLONES_COUNT; i++) {
-                const clone = images[i].cloneNode(true);
-                imageWrapper.appendChild(clone);
-            }
-            
-            // update list ảnh
-            images = document.querySelectorAll('.slider-wrapper img');
+  if (isSmallScreen) {
+    // view < 1100px
+    totalPages = 4; 
+    slideAmountPercent = 100 / totalPages; 
+  } else {
+    // view >= 1100px
+    totalPages = 2; 
+    slideAmountPercent = 100 / totalPages; 
+  }
 
-            // ví trí ban đầu
-            function setInitialPosition() {
-                const containerWidth = document.querySelector('.slider-container').offsetWidth;
-                const initialOffset = (containerWidth - IMAGE_WIDTH) / 2;
-                const offset = initialOffset - currentIndex * (IMAGE_WIDTH + GAP);
-                imageWrapper.style.transform = `translateX(${offset}px)`;
-            }
-            
-            setInitialPosition();
-            
-            // settimeout
-            setTimeout(() => {
-                imageWrapper.style.transition = 'transform 0.8s ease';
-            }, 100);
+  // Reset về trang đầu khi thay đổi kích thước
+currentPage = 0;
+imgContainer.style.transform = 'translateX(0)';
+updateButtons();
+}
 
+// Hàm di chuyển slide
+function slideToPage(pageIndex) {
+    const translateValue = -pageIndex * slideAmountPercent;
+    imgContainer.style.transform = `translateX(${translateValue}%)`;
+}
 
-            // slide
-            function slide(direction) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                currentIndex += direction;
-                
-                const containerWidth = document.querySelector('.slider-container').offsetWidth;
-                const initialOffset = (containerWidth - IMAGE_WIDTH) / 2;
-                const offset = initialOffset - currentIndex * (IMAGE_WIDTH + GAP);
-                imageWrapper.style.transform = `translateX(${offset}px)`;
-            }
+nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages - 1) {
+      currentPage++;
+      slideToPage(currentPage);
+      updateButtons();
+    }
+});
 
-            // xử lý chuyển động
-            imageWrapper.addEventListener('transitionend', () => {
-                isTransitioning = false;
-                
-                if (currentIndex >= images.length - CLONES_COUNT) {
-                    currentIndex = CLONES_COUNT; // 
-                    imageWrapper.style.transition = 'none'; 
-                    setInitialPosition(); 
-                    setTimeout(() => { 
-                        imageWrapper.style.transition = 'transform 0.8s  ease';
-                    }, 100);
-                }
-                
-                if (currentIndex < CLONES_COUNT) {
-                    currentIndex = images.length - (CLONES_COUNT * 2) + (currentIndex % CLONES_COUNT);
-                    imageWrapper.style.transition = 'none';
-                    setInitialPosition();
-                    setTimeout(() => {
-                        imageWrapper.style.transition = 'transform 0.8s ease';
-                    }, 100);
-                }
-            });
-          
-            nextBtn.addEventListener('click', () => slide(1));
-            prevBtn.addEventListener('click', () => slide(-1));
-            window.addEventListener('resize', setInitialPosition);
-            
-        });
+prevBtn.addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      slideToPage(currentPage);
+      updateButtons();
+    }
+});
+
+window.addEventListener('resize', updateSliderSettings);
+
+updateSliderSettings();
+
+ 

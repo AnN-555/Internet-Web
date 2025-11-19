@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const phaseItems = document.querySelectorAll(".phase ul li");
 
   if (phaseItems.length > 0) {
-
     phaseItems[0].addEventListener("click", function () {
       window.location.href = "./reservation-page-1.html";
     });
   }
 
-
-  const roomButtons = document.querySelectorAll(".room__detail__booking__price button");
+  const roomButtons = document.querySelectorAll(
+    ".room__detail__booking__price button"
+  );
 
   roomButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -17,8 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const roomName = roomElement.querySelector("h2").textContent.trim();
       const roomImage = roomElement.querySelector("img").getAttribute("src");
       const roomDescription = roomElement.querySelector("p").textContent.trim();
-      const roomSpecs = roomElement.querySelector(".room__detail__booking span").textContent.trim();
-      const roomPrice = roomElement.querySelector(".room__detail__booking__price p").textContent.trim();
+      const roomSpecs = roomElement
+        .querySelector(".room__detail__booking span")
+        .textContent.trim();
+      const roomPrice = roomElement
+        .querySelector(".room__detail__booking__price p")
+        .textContent.trim();
 
       const params = new URLSearchParams({
         name: roomName,
@@ -31,4 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = `./reservation-page-3.html?${params.toString()}`;
     });
   });
+  const navTop = document.getElementById("top-page");
+  if (navTop) {
+    navTop.addEventListener("click", function () {
+      window.location.href = "../index.html";
+    });
+  }
 });
