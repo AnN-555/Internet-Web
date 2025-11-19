@@ -22,25 +22,40 @@
 
 <body>
 
-    <nav>
-        <a href="#">
-            <img src="images/homepage/home_icon.png" alt="Homepage">
-        </a>
-        <a class="nav-item" href="#">HOME</a>
-        <a class="nav-item" href="#">ROOMS</a>
-        <a class="nav-item" href="#">DINING</a>
-        <a class="nav-item" href="#">ABOUT US</a>
-        <a href="#" class="reserve_box">RESERVE</a>
-        <div class="lang_select">
-            <select>
-                <option value="en">EN</option>
-                <option value="vi">VI</option>
-            </select>
-        </div>
-    </nav>
+        <header>
+        <!--navigation-->
+        <nav class="nav">
+            <i class="fa-solid fa-bars" id="hamburger"></i>
+            <i class="fa-solid fa-xmark" id="close"></i>
+            <!--logo-->
+            <div class="menu-logo">
+                <a href="..\index.html">
+                    <img src="..\images\logo3.png" alt="Dimond Hotel Logo">
+                </a>
+            </div>
+            <!--menu-->
+            <div class="menu-list">
+                <ul>
+                    <li><a href="..\index.html">HOME</a></li>
+                    <li><a href="..\room-pages\roomPages.html">ROOMS</a></li>
+                    <li><a href="..\dining\index.html">DINING</a></li>
+                    <li><a href="..\about-us\index.html">ABOUT US</a></li>
+                </ul>
+            </div>
+            <!--booking-->
+            <div class="booking">
+                <a href="..\reservation\reservation-page-1.html" class="reserve-button">RESERVE</a>
+                <label for="" class="icons">
+                    <p>EN</p>
+                    <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                </label>
+            </div>
+        </nav>
+    </header>
+
+
 
     <div class="scroll-container">
-
         <section class="page-1">
             <p class="p1">WELCOME TO DIAMOND LAND</p>
             <p class="p2">The Art Of Riverside Living</p>
@@ -151,8 +166,6 @@
 
         <section class="ft-box">
 
-
-
             <div class="inforbox">
                 <p class="h3">DIAMOND LAND HOTEL</p>
                 <p class="h4">Han Thuyen Street, Thu Duc Ward, Ho Chi Minh City, Vietnam</p>
@@ -183,7 +196,7 @@
                 </div>
             </div>
 
-        </section>
+        </section> 
 
 
 

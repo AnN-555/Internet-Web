@@ -1,5 +1,5 @@
 html,
-body {
+/* body {
     font-family: 'Old Standard TT', sans-serif;
     scroll-behavior: smooth;
     width: 100vw;
@@ -8,7 +8,13 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+} */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
 
 /* *{box-sizing: border-box;} */
 
@@ -23,11 +29,11 @@ p {
     overflow-y: scroll;
 } */
 
-nav {
+/* nav {
     position: sticky;
-    top: 0;
+    top: 0; */
     /* z-index: 1000; */
-    width: 100vw;
+    /* width: 100vw;
     height: 8vh;
     background-color: #EBE3D7;
     display: flex;
@@ -72,23 +78,23 @@ nav a:hover {
     /* Light blue underline */
 
     /* Initial state: scaled down to 0 */
-    transform: scaleX(0);
-    transform-origin: center;
+    /* transform: scaleX(0);
+    transform-origin: center; */
     /* Animation originates from the center */
 
     /* Smooth transition for the animation */
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
+    /* transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); */
+/* } */
 
-.nav-item:hover::after {
+/* .nav-item:hover::after {
     transform: scaleX(2);
-}
-
+} */
+ 
 /* nav a:hover{
     text-decoration: underline;
     color: #9B8D5F;
 } */
-.reserve_box {
+/* .reserve_box {
     border: 2px solid black;
     color: white;
     border-radius: 4px;
@@ -98,6 +104,128 @@ nav a:hover {
     padding-bottom: 5px;
     background-color: black;
     text-decoration: none;
+} */
+
+.old-standard-tt {
+    font-family: 'Old Standard TT', serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: "Roboto", serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #212322;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Old Standard TT', serif;
+    font-style: normal;
+    line-height: normal;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    font-size: 1.25rem;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #EBE3D7;
+    z-index: 999;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.menu-logo,
+.booking {
+    margin: 0 4.6vw;
+}
+
+.menu-list ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(3vw, 8vw, 10vw);
+    flex-wrap: nowrap;
+}
+
+.menu-list li a {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    color: #212322;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    font-weight: 300;
+}
+
+.menu-logo img {
+    height: 80px;
+    width: auto;
+}
+
+/* Đường gạch chân */
+.menu-list li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #C6AA76;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: #C6AA76;
+    font-weight: 400;
+}
+
+/* Gạch xuất hiện */
+.menu-list li a:hover::after {
+    width: 7.8vw;
+}
+
+.booking {
+    display: flex;
+    align-items: center;
+}
+
+.reserve-button {
+    text-decoration: none;
+    margin-right: 2.6vw;
+    padding: 0 2vw;
+    border-radius: 5px;
+    width: auto;
+    height: 3rem;
+    color: #fff;
+    background-color: #212322;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserve-button:hover {
+    color: #212322;
+    background-color: #9B8D5F;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
 }
 
 .lang_select {
@@ -109,15 +237,15 @@ select {
     border: none;
 }
 
-.scroll-container {
+/* .scroll-container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 92vh;
-}
+} */
 
 section {
     height: 92vh;
-    width: 100vw;
+    width: 100%;
     scroll-snap-align: start;
     justify-content: center;
     display: flex;
@@ -229,11 +357,8 @@ hr {
     flex-direction: column;
     padding: 0;
     margin: 0;
-}
-
-.page-1 img {
-    height: 20vw;
-    width: 20vh;
+    position: relative;
+    padding-top: 50%;
 }
 
 .page-2 {

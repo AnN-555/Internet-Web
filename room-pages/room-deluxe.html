@@ -4,77 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deluxe Room</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">  
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="/css/roompage/style-rooms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-    <div class="header__wrapper header__respon">
-        <div class="hamber-btn">
-            <i class="fa-solid fa-bars"></i>
+    <nav class="nav">
+        <i class="fa-solid fa-bars" id="hamburger"></i>
+        <i class="fa-solid fa-xmark" id="close"></i>
+    <!--logo-->
+        <div class="menu-logo">
+            <a href="/homePage.html">
+                <img src="/images/logo3.png" alt="Dimond Hotel Logo">
+            </a>
         </div>
-        <div class="header__main-nav">
-            <nav class="header__link">
-                <ul class="contents">
-                    <li class="item">
-                        <a href="#">HOME</a>
-                    </li>
-                    <li class="item active sub">
-                        <a class="active" href="/room-pages/roomPages.html">ROOMS <i class="fa-solid fa-angle-down"></i></a>
-                        <ul class="sub-menu">
-                            <div class="sub-distance">
-                                <li><a href="/room-pages/room-deluxe.html">DELUXE ROOM</a></li>
-                                <li><a href="/room-pages/room-twin.html">DELUXE TWIN ROOM</a></li>
-                                <li><a href="/room-pages/room-superior.html">SUPERIOR ROOM</a></li>
-                                <li><a href="/room-pages/room-dinamond.html">DINAMOND SUITE</a></li>
-                                <li><a href="/room-pages/room-president.html">PRESIDENT SUITE</a></li>
-                            </div>
-                            
-                        </ul>
-                    </li>
-                    <li class="item">
-                        <a href="#">DINING</a>
-                    </li>
-                    <li class="item">
-                        <a href="#">ABOUT US</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <a href="" class="header__logo">
-            <img src="/images/rooms/logo.png" alt="">
-        </a>
-        <div class="header__secondary-nav">
-            <ul class="header__icon-list">
-                <li><a href="">RESEVER</a></li>
-                <li><a href="">EN</a></li>
-                <li><a href="" class="fa-solid fa-chevron-down"></a></li>
+                <!--menu-->
+        <div class="menu-list">
+            <ul>
+                <li><a href="/homePage.html">HOME</a></li>
+                <li><a href="/room-pages/roomPages.html">ROOMS</a></li>
+                <li><a href="/dining/index.html">DINING</a></li>
+                <li><a href="/about-us/index.html">ABOUT US</a></li>
             </ul>
         </div>
-    </div>
-    <div class="overlay"></div>
-    <nav class="side__bar">
-        <i class="fa-solid fa-xmark close-btn"></i>
-        <ul class="content">
-            <li class="item">
-                <a href="#">HOME</a>
-            </li>
-            <li class="item active sub">
-                 <a class="active" href="/room-pages/roomPages.html">ROOMS</a>
-            </li>
-            <li class="item">
-                <a href="#">DINING</a>
-            </li>
-            <li class="item">
-                <a href="#">ABOUT US</a>
-            </li>
-        </ul>
-        <div class="social">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
+                <!--booking-->
+        <div class="booking">
+            <a href="/reservation/reservation-page-1.html" class="reserve-button">RESERVE</a>
+            <div class="icons">
+                <p>EN</p>
+            <!-- <i class="fa-solid fa-chevron-down"></i> -->
+            </div>
         </div>
-        
     </nav>
     <!-- Banner layout -->
     <div class="banner__room deluxe">
@@ -89,19 +53,19 @@
 
     <!-- Slide layout -->
     <div class="slider-container">
-        <div class="slider-wrapper">
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe1.png" alt="Image 1"></div>
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe2.png" alt="Image 2"></div>
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe3.png" alt="Image 3"></div>
-            <div class="slide"><img src="/images/rooms/rooms/room-deluxe/slide-deluxe4.png" alt="Image 4"></div>
+        <div class="img-container">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe1.png" alt="">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe2.png" alt="">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe3.png" alt="">
+            <img src="/images/rooms/rooms/room-deluxe/slide-deluxe4.png" alt="">
         </div>
-        <div class="opacity"></div>
-        <div class="controls-btn">
-            <button class="slider-btn prev-button" id="prevBtn">❮</button>
-            <button class="slider-btn next-button" id="nextBtn">❯</button>
+        <div class="btn__set">
+            <i class="fa-solid fa-angle-left btn prv"></i>
+            <i class="fa-solid fa-angle-right btn nxt"></i>
         </div>
+        
     </div>
-    
+
     <!-- Content layout -->
      <div class="card">
         <div class="card__info">
@@ -132,7 +96,7 @@
                     <span class="col2">Floor 6 to 12</span>
                 </li>
             </ul>
-            <a href="" class="btn-book">RESERVE NOW</a>
+            <a href="/reservation/reservation-page-1.html" class="btn-book">RESERVE NOW</a>
         </div>
         <div class="card__ame">
             <div class="card-tabs">
@@ -180,7 +144,7 @@
                 <h4>Deluxe Twin Room</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>Plush elegance awaits you in our divine Premium Rooms. Embrace yourself in warmth as you....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  35m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  35m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-twin.html" >VIEW DETAILS</a>
@@ -194,7 +158,7 @@
                 <h4>Superior Room</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>Unwind with freshly made coffees straight from the espresso machine in the spacious lounge area....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  40m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  40m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-superior.html" >VIEW DETAILS</a>
@@ -208,7 +172,7 @@
                 <h4>Dinamond Suite</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>Unwind with freshly made coffees straight from the espresso machine in the spacious lounge area....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  50m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  50m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-dinamond.html" >VIEW DETAILS</a>
@@ -222,7 +186,7 @@
                 <h4>President Suite</h4> 
                 <img class="img-left" src="/images/rooms/icon/Line.png" alt="">
                 <p>A balance between classic elegance and contemporary convenience gives you absolute privacy and blissful relaxation....</p>
-                <p>02 guest &nbsp&nbsp&nbsp  139m <sup>2</sup></p>
+                <p>02 guest &nbsp;&nbsp;&nbsp;  139m <sup>2</sup></p>
                 <img src="/images/rooms/icon/Group-25.png" alt="">
                 <div class="room-btn">
                     <a href="/room-pages/room-president.html" >VIEW DETAILS</a>
@@ -232,40 +196,42 @@
      </div>
 
       <!-- Footer layout -->
-    <footer class="footer">
-        <div class="footer-address">
-            <h4>DIAMOND LAND HOTEL</h4>
-            <p>Han Thuyen Street, Thu Duc Ward, Ho Chi Minh City, Vietnam</p>
-            <p>Tel: +84 (0) 28 1234 0000</p>
-            <p>Email: info@diamondland.com</p>
-        </div>
+<footer class="footer">
+            <div class="footer-infor">
+                <h3>DIAMOND LAND HOTEL</h3>
+                <p>Han Thuyen Street, Thu Duc Ward, Ho Chi Minh City, Vietnam</p>
+                <p>Tel: +84 (0) 28 1234 0000</p>
+                <p>Email: info@diamondland.com</p>
+            </div>
 
-        <div class="footer-menu">
-            <h4>ABOUT</h4>
-            <a href="">ABOUT DIAMOND LAND </a>
-            <a href="">CAREER</a>
-            <a href="">CONTACT US</a>
-        </div>
+            <div class="footer-about">
+                <h3>ABOUT</h3>
+                <a href="">ABOUT DIAMOND LAND</a>
+                <a href="">CAREER</a>
+                <a href="">CONTACT US</a>
+            </div>
 
-        <div class="footer-menu">
-            <h4>INQUIRIES</h4>
-            <a href="">MAKE A RESERVATION</a>
-            <a href="">ROOMS</â>
-            <a href="">PLAN AN EVENT</a>
-            <a href="">PRE-ARRIVAL REFERENCES</a>
-        </div>
+            <div class="footer-inquiries">
+                <h3>INQUIRIES</h3>
+                <a href="">MAKE A RESERVATION</a>
+                <a href="">ROOMS</a>
+                <a href="">PLAN AN EVENT</a>
+                <a href="">PRE-ARRIVAL REFERENCES</a>
+            </div>
 
-        <div class="footer-social">
-            <h4>LET’S KEEP IN TOUCH</h4>
-            <p>Follow us on social media</p>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-        </div>
+            <div class="footer-social">
+                <h3>LET’S KEEP IN TOUCH</h3>
+                <p>Follow us on social media</p>
+                <div class="footer-social">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
     </footer>
-    
+     <script src="/js/dining/script.js"></script>
      <script src="/js/room/room_main.js"></script>
      <script src="/js/room/room_slide-img.js"></script>
      <script src="/js/room/room_tab.js"></script>
      <script src="/js/room/nav-hamber.js"></script>
-</body>>
+</body>
 </html>
