@@ -142,8 +142,8 @@ h2 {
 .banner h1 {
     position: absolute;
     top: 41%;
-    font-size: 3.125vw;
-    font-weight: 400;
+    font-size: clamp(12px, 3.2vw, 65px);
+    font-weight: 200;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -153,7 +153,7 @@ h2 {
     position: absolute;
     bottom: 42%;
     font-family: 'Old Standard TT', serif;
-    font-size: 2.6vw;
+    font-size: clamp(11px, 2.5vw, 60px);
     font-weight: 400;
     color: #fff;
     text-transform: capitalize;
@@ -166,13 +166,17 @@ h2 {
     height: auto;
 }
 
+.about-us .about-us-text {
+    max-width: 30vw;
+    width: 100%;
+}
+
 .about-us-text p {
     color: #212322;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 300;
     line-height: 1.875rem;
-    width: 23vw;
 }
 
 .about-us-text h2 {
@@ -187,7 +191,7 @@ h2 {
 .about-us-text h2::after {
     content: "";
     position: absolute;
-    width: 5.2vw;
+    width: 6.5vw;
     height: 2px;
     left: 0;
     bottom: -7px;
@@ -203,8 +207,8 @@ h2 {
     justify-content: space-between;
     height: auto;
     min-height: 45vw;
-    gap: 4.1vw;
-    padding: 13.5vw;
+    gap: 3.9vw;
+    padding: 5vw;
 }
 
 .about-us-layout {
@@ -394,34 +398,35 @@ h2 {
         padding-bottom: 7vw;
     }
 
-    .about-us-layout-reverse .about-us-text {
+    .about-us .about-us-text {
         order: 2;
+        max-width: 70vw;
+        width: 100%;
     }
 
-    .about-us-text p {
+    .about-us .about-us-text p {
         font-size: 1rem;
         line-height: 1.5rem;
-        width: 60vw;
         text-align: center;
         padding-top: 5px;
     }
 
-    .about-us-text h2 {
+    .about-us .about-us-text h2 {
         font-size: 1.25rem;
         position: relative;
         text-align: center;
     }
 
-    .about-us-text h2::after {
+    .about-us .about-us-text h2::after {
         left: 50%;
         transform: translateX(-50%);
-        width: 10vw;
+        width: 12vw;
     }
 
     /* footer */
     .footer {
         height: auto;
-        width: 100vw;
+        width: 100%;
     }
 
     .footer h2 {
@@ -481,14 +486,15 @@ h2 {
         padding: 5vw 7vw;
     }
 
-    .about-us-layout-reverse .about-us-text {
+    .about-us .about-us-text {
         order: 2;
+        max-width: 70vw;
+        width: 100%;
     }
 
     .about-us-text p {
         font-size: 0.85rem;
         line-height: 1.4rem;
-        width: 70vw;
         padding-top: 10px;
     }
 
@@ -502,7 +508,7 @@ h2 {
 
     .footer {
         height: auto;
-        width: 100vw;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         text-align: center;

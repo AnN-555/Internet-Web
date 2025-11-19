@@ -1,5 +1,5 @@
 /* Reset CSS */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -28,7 +28,8 @@ html {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Old Standard TT', serif;
     font-style: normal;
     line-height: normal;
@@ -136,6 +137,7 @@ h3 {
     margin-top: 80px;
     background: url('/images/rooms/room-banner.png') top center / cover no-repeat;
 }
+
 .banner__home h1 {
     position: absolute;
     display: flex;
@@ -143,7 +145,7 @@ h3 {
     text-align: center;
     color: #fff;
     font-weight: 200;
-    top:47%;
+    top: 41%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -155,11 +157,11 @@ h3 {
     padding-left: max(1rem, 50% - 850px);
 }
 
-.amenities>h2{
+.amenities>h2 {
     text-align: center;
     font-size: clamp(14px, 1.5vw, 28px);
     margin-bottom: 40px;
-    font-weight:lighter;
+    font-weight: lighter;
     color: #212322;
 }
 
@@ -167,7 +169,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
-    
+
 }
 
 .titles {
@@ -189,20 +191,20 @@ h3 {
 }
 
 /* Room layout */
-.room  {
+.room {
     margin-top: 50px;
 }
 
 .room-1,
 .room-3,
 .room-5 {
-    background-color: rgba(235,227,215,0.3);
+    background-color: rgba(235, 227, 215, 0.3);
     height: 900px;
     width: 100%;
     display: grid;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .room-2,
@@ -212,28 +214,31 @@ h3 {
     width: 100%;
     display: grid;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 
-.room-deluxe, .room-superior, .room-president {
+.room-deluxe,
+.room-superior,
+.room-president {
     display: grid;
     align-items: center;
     grid-template-rows: auto;
-    grid-template-areas:"img content";
+    grid-template-areas: "img content";
     padding-right: max(1rem, 50% - 680px);
     padding-left: max(1rem, 50% - 680px);
-    column-gap: 60px; 
+    column-gap: 60px;
 }
 
-.room-twin, .room-suite {
+.room-twin,
+.room-suite {
     display: grid;
     align-items: center;
     grid-template-rows: auto;
-    grid-template-areas:"content img";
+    grid-template-areas: "content img";
     padding-right: max(1rem, 50% - 680px);
     padding-left: max(1rem, 50% - 680px);
-    column-gap: 60px; 
+    column-gap: 60px;
 }
 
 .room .img-room__o img {
@@ -262,7 +267,7 @@ h3 {
 }
 
 .room .room__content h4 {
-    font-size: clamp(14px, 1.4vw, 24px);
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -274,7 +279,8 @@ h3 {
 
 .room .room__content p {
     margin-bottom: 30px;
-    font-size: clamp(14px, 1.1vw, 18px);
+    line-height: 1.875rem;
+    font-size: 1.125rem;
 }
 
 .room .room__content>img {
@@ -286,21 +292,21 @@ h3 {
     justify-content: space-between;
 }
 
-.room .room-btn a{
+.room .room-btn a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 1rem;
     font-family: old standard tt, serif;
     text-decoration: none;
-    height: 35px;
+    height: 40px;
     width: 200px;
     border: 1px solid #9B8D5F;
     border-radius: 5px;
     color: #9B8D5F;
 }
 
-.room .room-btn a:hover{
+.room .room-btn a:hover {
     color: #fff;
     background-color: #9B8D5F;
     transition: 0.6s ease;
@@ -347,6 +353,7 @@ h3 {
 #close {
     display: none;
 }
+
 /* Reponsive */
 
 /* @media (max-width: 1550px) {
@@ -356,7 +363,10 @@ h3 {
 } */
 
 @media (max-width: 1170px) {
-    .room-deluxe, .room-superior, .room-president {
+
+    .room-deluxe,
+    .room-superior,
+    .room-president {
         display: grid;
         align-items: center;
         grid-template-rows: auto;
@@ -369,7 +379,8 @@ h3 {
         border-bottom: #e0e0e0 1px solid;
     }
 
-    .room-twin, .room-suite {
+    .room-twin,
+    .room-suite {
         display: grid;
         align-items: center;
         grid-template-rows: auto;
@@ -394,7 +405,8 @@ h3 {
         justify-content: center;
     }
 
-    .room-2,.room-4 {
+    .room-2,
+    .room-4 {
         width: 100%;
         height: 100%;
         display: grid;
@@ -413,7 +425,7 @@ h3 {
         flex-wrap: wrap;
         gap: 20px;
         justify-content: space-around;
-        
+
     }
 
     .room .room__content .line {
@@ -421,29 +433,30 @@ h3 {
     }
 
     .footer {
-        flex-wrap:wrap;
+        flex-wrap: wrap;
         padding: 60px 0;
-        background-color: #EBE3D7 ;
+        background-color: #EBE3D7;
         height: auto;
         padding-right: max(2rem, 50% - 850px);
         padding-left: max(2rem, 50% - 850px);
-        gap:20px;
-}
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
     .amentities__img {
         display: grid;
-        grid-template-columns: repeat(4,auto);
+        grid-template-columns: repeat(4, auto);
         justify-content: s;
         align-items: center;
         padding-inline: 0;
     }
+
     .amentities__img img {
         scale: 0.8;
         width: 100%;
     }
-    
+
     .footer {
         height: auto;
         flex-direction: column;
@@ -540,10 +553,12 @@ h3 {
         from {
             transform: translateX(-100%);
         }
+
         to {
             transform: translateX(0);
         }
     }
+
     .menu-list.menu-open ul {
         width: 100%;
         display: flex;
@@ -583,10 +598,19 @@ h3 {
         display: none;
     }
 
+    .room .room__content h4 {
+        font-size: 1.25rem;
+    }
+
+    .room .room__content p {
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
+
     /* footer */
     .footer {
         height: auto;
-        width: 100vw;
+        width: 100%;
     }
 
     .footer h3 {
@@ -608,9 +632,11 @@ h3 {
     html {
         font-size: 14px;
     }
+
     .banner__home {
         margin-top: 60px;
     }
+
     .nav {
         font-size: 0.85rem;
         height: 60px;
@@ -640,9 +666,10 @@ h3 {
         font-size: 1.25rem;
         padding: 15px;
     }
+
     .footer {
         height: auto;
-        width: 100vw;
+        width: 100%;
         flex-direction: column;
         align-items: center;
         text-align: center;
