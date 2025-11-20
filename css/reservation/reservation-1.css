@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 300;
   background-color: #f5f0eb;
 }
+
 h1 {
   font-family: "Old Standard TT", serif;
   font-weight: 400;
@@ -17,22 +19,26 @@ h1 {
   justify-content: center;
   margin: 12vh;
 }
+
 h2 {
   font-family: "Old Standard TT", serif;
   font-weight: 700;
   font-size: clamp(0.68rem, 2.5vw, 1.35rem);
 }
+
 h3 {
   font-family: "Old Standard TT", serif;
   font-weight: 400;
   font-size: clamp(0.68rem, 1.5vw, 1.4rem);
 }
+
 .language-selection {
   text-align: right;
   font-size: 1em;
   display: block;
   background-color: #ebe3d7;
 }
+
 nav.top-page {
   text-align: center;
   text-decoration: none;
@@ -47,10 +53,13 @@ nav.top-page {
   justify-content: end;
   padding-right: 5vw;
 }
+
 .language-style {
   background: transparent;
   border: 0;
+  font-size: 1rem;
 }
+
 .phase ul {
   color: black;
   list-style: none;
@@ -63,30 +72,37 @@ nav.top-page {
   align-items: center;
   gap: 1vw;
 }
+
 .phase li {
   display: flex;
   align-items: center;
   gap: 5px;
 }
+
 .upcoming__phase {
   opacity: 0.5;
 }
+
 .phase li:nth-child(even) {
   width: 40px;
   height: 1px;
   background-color: #cdcfce;
 }
+
 .room-type {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 2em;
 }
+
 .step__detail p {
   font-size: clamp(0.4rem, 1.1vw, 0.85rem);
 }
+
 .step__highlight {
   font-size: clamp(0.5rem, 1.5vw, 1rem);
 }
+
 .container {
   margin-top: 3vh;
   background-color: #ffffff;
@@ -96,38 +112,47 @@ nav.top-page {
   width: 70%;
   height: 82vh;
 }
+
 .step__detail {
   display: flex;
   flex-direction: column;
-  gap: 6vh;
+  gap: 4vw;
+  width: 20vw;
   background-color: #faf7f4;
 }
+
 .step__detail h3 {
   margin-left: 10%;
+  padding: 10px 0;
 }
-.step__detail > div {
-  height: 6vh;
+
+.step__detail>div {
+  height: 4vw;
 }
+
 .divider {
   width: 1px;
   height: auto;
   background-color: #ccc;
 }
-.date-box > .divider {
+
+.date-box>.divider {
   height: 40px;
 }
+
 .confirm__btn {
   margin-top: 4vh;
   border: none;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  border-radius: 0.5vh;
+  border-radius: 10px;
   width: 80%;
   place-self: center;
   background-color: rgba(33, 35, 34, 0.2);
   font-size: clamp(0.45rem, 1.5vw, 1.5rem);
   color: #fff;
 }
+
 .confirm__btn:disabled {
   opacity: 0.5;
 }
@@ -138,6 +163,7 @@ nav.top-page {
   background-color: #212322;
   cursor: pointer;
 }
+
 .single__option__btn {
   display: flex;
   border-color: #212322;
@@ -149,42 +175,51 @@ nav.top-page {
   background-color: #ffffff;
   height: 100%;
   align-items: center;
+  border: 1px solid rgba(27, 26, 24, 0.5);
 }
+
 .step__detail img {
   max-height: 2vh;
   max-width: 2vw;
 }
+
 .button__info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+
 .button__text {
   font-size: clamp(0.4rem, 1.15vw, 0.85rem);
 }
-.room__selection > .button__info {
+
+.room__selection>.button__info {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   width: 10vw;
   font-size: clamp(0.4rem, 1.15vw, 0.85rem);
 }
+
 .button__info .amount {
   display: flex;
   justify-content: space-between;
   gap: 0.3vw;
 }
+
 .calendar-wrapper {
   position: relative;
   display: inline-block;
 }
-.calendar-icon {
-  font-size: 24px;
+
+.fa-calendar {
+  font-size: 1rem;
   cursor: pointer;
-  padding: 8px;
+  padding: 2px;
   border: none;
   background: none;
 }
+
 .calendar-input {
   position: absolute;
   top: 0;
@@ -192,6 +227,7 @@ nav.top-page {
   opacity: 0;
   pointer-events: none;
 }
+
 .calendar-btn {
   display: flex;
   align-items: center;
@@ -201,9 +237,10 @@ nav.top-page {
   font-size: clamp(0.4rem, 1.15vw, 0.85rem);
   cursor: pointer;
 }
+
 .date-box {
   display: flex;
-  border: 1px solid #212322;
+  border: 1px solid rgba(27, 26, 24, 0.5);
   padding-top: 1vh;
   padding-bottom: 1vh;
   padding-right: 1vh;
@@ -216,47 +253,63 @@ nav.top-page {
   align-items: center;
   justify-self: center;
 }
+
 .info__detail {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   max-width: 100%;
   font-size: clamp(0.9rem, 2.2vw, 1.8rem);
   gap: 1vh;
+  padding: 0 15px 20px;
+  box-sizing: border-box;
 }
-.info__detail > span {
+
+.info__detail>span {
   font-family: "Old Standard TT", serif;
   font-weight: 700;
+  text-align: center;
   font-size: clamp(0.9rem, 2.2vw, 1.8rem);
+  padding: 15px 0;
 }
+
 form {
   display: flex;
   flex-direction: column;
-  max-width: 90%;
-  justify-content: space-between;
+  max-width: 100%;
+  gap: 1.5rem;
 }
+
 form .divider {
-  width: auto;
+  width: 100%;
   height: 2px;
 }
+
 .form-row {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
 }
 
 .form-row label {
-  width: 15vw;
-  margin-right: 1rem;
-  /* font-weight: 400; */
+  flex: 0 0 45%;
+  max-width: 45%;
+  margin-right: 0.5rem;
+  font-family: "Old Standard TT", serif;
+  font-size: 1.25rem;
 }
 
 .form-row input {
   flex: 1;
   padding: 0.5rem;
   border: none;
-  text-align: center;
+  text-align: right;
+  font-size: 1rem;
+  min-width: 0;
 }
+
 .calendar-popup {
   position: absolute;
   background-color: white;
@@ -272,6 +325,7 @@ form .divider {
   align-items: center;
   justify-content: space-between;
 }
+
 .calendar-popup input[type="date"] {
   font-size: 1.2rem;
   padding: 1vw;
@@ -288,11 +342,13 @@ form .divider {
   border-radius: 0.5vw;
   cursor: pointer;
 }
+
 .calendar-popup input[type="date"] {
   font-size: 1rem;
   padding: 8px;
   margin-bottom: 10px;
 }
+
 .location-popup {
   position: absolute;
   top: 0;
@@ -312,48 +368,59 @@ form .divider {
 .single__option__btn {
   position: relative;
 }
+
 .location-container {
   position: relative;
   display: inline-block;
 }
+
 .location-popup ul {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
+
 .location-popup li {
   padding: 0.5rem 0;
   padding-left: 2rem;
   cursor: pointer;
   border-bottom: 0.2rem solid #fff;
 }
+
 .location-popup li:last-child {
   border-bottom: none;
 }
+
 .location-container.active {
   background-color: white;
 }
+
 .room-container.active {
   background-color: white;
 }
+
 .location-popup li:hover {
   background-color: #f0f0f0;
 }
+
 .confirm__btn {
   transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
+
 .confirm__btn:active {
   transform: scale(0.95);
   background-color: #ebe3d7;
   color: #212322;
 }
+
 #room-popup,
 #location-popup,
 #checkin-popup,
 #checkout-popup {
   display: none;
 }
+
 .room-popup {
   background-color: white;
   border: 1px solid #ccc;
@@ -367,6 +434,7 @@ form .divider {
   align-items: center;
   justify-content: center;
 }
+
 .guest-counter {
   display: flex;
   gap: 1rem;
@@ -391,37 +459,42 @@ form .divider {
   text-align: center;
   display: inline-block;
 }
-@media (max-width: 500px) {
 
-  .date-box {
-    flex-direction: column;
+@media (max-width: 990px) {
+  html {
+    font-size: 16px;
   }
-  .button__info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+
+  .nav.top-page {
+    height: 60px;
   }
-  .room__selection > .button__info {
-    justify-content: space-between;
-    flex-direction: column;
-    width: 8px;
+
+  .container {
+    width: 85%;
   }
+
+  .room-popup {
+    max-width: 60vw;
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    font-size: 16px;
+  }
+
+  .nav.top-page {
+    height: 50px;
+  }
+
+  .calendar-btn .fa-calendar {
+    display: none;
+  }
+
   .divider {
     display: none;
   }
-  .form-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
 
-  .form-row label {
-    width: 100%;
-    text-align: center;
-  }
-
-  .form-row input {
-    width: 100%;
-  }
   .phase ul li {
     display: none;
   }
@@ -431,16 +504,321 @@ form .divider {
     justify-content: center;
     width: 100%;
   }
+
   .step__detail img {
     display: none;
   }
+
+  .container {
+    width: 90%;
+  }
+
+  .step__detail {
+    gap: 6vw;
+    width: 30vw;
+  }
+
+  .step__detail h3 {
+    margin-left: 10%;
+    padding: 10px 0;
+  }
+
+  .step__detail>div {
+    height: 5vw;
+  }
+
+  .divider {
+    width: 1px;
+    height: auto;
+    background-color: #ccc;
+  }
+
+  .date-box>.divider {
+    height: 80px;
+  }
+
+  .room__selection .button__info {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .room__selection .button__info .amount {
+    gap: 0.75rem;
+  }
 }
+
+@media (max-width: 550px) {
+  html {
+    font-size: 16px;
+  }
+
+  .nav.top-page {
+    height: 45px;
+    background-size: 60px;
+    padding-right: 3vw;
+  }
+
+  .container {
+    width: 95%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: auto;
+    margin-top: 2vh;
+    gap: 2vh;
+  }
+
+  .step__detail {
+    width: 100%;
+    gap: 2.5vh;
+    padding: 2vh 1vw;
+    order: 1;
+  }
+
+  .step__detail h3 {
+    margin-left: 5%;
+    padding: 8px 0;
+    font-size: 1rem;
+  }
+
+  .step__detail>div {
+    height: auto;
+    min-height: 6vh;
+    margin-bottom: 2vh;
+  }
+
+  .date-box {
+    width: 95%;
+    padding: 1.2vh 0.5vh;
+    gap: 0.3rem;
+    align-items: center;
+    height: auto;
+    min-height: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+  }
+
+  .date-box>.divider {
+    display: none;
+  }
+
+  .date-box>img {
+    display: none;
+  }
+
+  .calendar-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: clamp(0.6rem, 3vw, 0.95rem);
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.5vh 0.3vh;
+    border: 1px solid rgba(27, 26, 24, 0.3);
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .calendar-btn span {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    flex: 1;
+    text-align: center;
+  }
+
+  .calendar-btn .fa-calendar {
+    display: none;
+  }
+
+  .info__detail {
+    padding: 15px 10px 20px;
+    font-size: clamp(0.8rem, 3vw, 1.4rem);
+    order: 2;
+  }
+
+  .info__detail>span {
+    font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+    padding: 12px 0;
+  }
+
+  form {
+    gap: 1rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .form-row label {
+    flex: 0 0 auto;
+    max-width: 100%;
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .form-row input {
+    width: 100%;
+    text-align: left;
+    font-size: clamp(0.7rem, 2.8vw, 0.95rem);
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  form .divider {
+    margin: 0.5rem 0;
+  }
+
+  .single__option__btn {
+    width: 95%;
+    padding: 1.2vh 1vh;
+    min-height: 5vh;
+  }
+
+  .button__info {
+    gap: 0.3rem;
+  }
+
+  .button__text {
+    font-size: 0.85rem;
+  }
+
+  .step__highlight {
+    font-size: 0.85rem;
+  }
+
+  .room__selection .button__info .amount p {
+    font-size: 0.85rem;
+  }
+
+  .confirm__btn {
+    width: 95%;
+    font-size: 0.85rem;
+    padding: 1.5vh 0;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+  }
+
+  .calendar-popup {
+    max-width: 85vw;
+    padding: 1.2rem;
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: 50% !important;
+    margin-top: -100px;
+  }
+
+  .calendar-popup input[type="date"] {
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .calendar-popup button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .location-popup {
+    width: 85vw;
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: auto !important;
+    position: fixed;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .location-popup ul {
+    width: 100%;
+  }
+
+  .location-popup li {
+    padding: 0.8rem 1rem;
+    font-size: clamp(0.7rem, 2.5vw, 0.95rem);
+  }
+
+  .room-popup {
+    max-width: 85vw;
+    padding: 1rem;
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: 50% !important;
+    margin-top: -150px;
+    flex-direction: column;
+  }
+
+  .guest-counter {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .counter-group {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  .counter-group label {
+    font-size: clamp(0.7rem, 2.5vw, 0.95rem);
+  }
+
+  .counter button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .counter span {
+    min-width: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .guest-counter>button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: clamp(0.7rem, 2.5vw, 0.95rem);
+    margin-top: 0.5rem;
+  }
+
+  .guest-counter .divider {
+    width: 100%;
+    height: 1px;
+    margin: 0.5rem 0;
+  }
+
+  .phase ul {
+    font-size: clamp(0.5rem, 3vw, 0.85rem);
+    height: 4vh;
+    padding: 0 2vw;
+  }
+
+  .step__detail img {
+    max-width: 15px;
+    max-height: 15px;
+  }
+}
+
 /* font family */
 .old-standard-tt {
   font-family: "Old Standard TT", serif;
   font-weight: normal;
   font-style: normal;
 }
+
 .roboto-standard {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
