@@ -20,13 +20,22 @@ document.addEventListener('DOMContentLoaded', function(){
         body.style.overflow = 'auto';
     })
 
-    const breakpoint = 900;
-    const isSmallScreen = window.innerWidth >= breakpoint;
-    
-    if (isSmallScreen){
-        close.addEventListener('resize', function(){
+    //Đóng menu và reset state
+    function closeMenu() {
         close.style.display = 'none';
-    })
+        hamburger.style.display = '';
+        menuList.classList.remove('menu-open');
+        body.style.overflow = 'auto';
     }
-    
+
+    // Tự động đóng menu khi màn hình lớn
+    const breakpoint = 990; //CSS breakpoint
+    window.addEventListener('resize', function(){
+        if (window.innerWidth > breakpoint) {
+            // Nếu menu đang mở, tự động đóng
+            if (menuList.classList.contains('menu-open')) {
+                closeMenu();
+            }
+        }
+    })
 })
