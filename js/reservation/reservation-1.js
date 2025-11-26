@@ -1,176 +1,238 @@
-function openPopup(popupId) {
-  const popup = document.getElementById(popupId);
-  const anchor = document.querySelector(".info__detail");
+document.addEventListener('DOMContentLoaded', () => {
+    const checkinInput = document.getElementById('date-input-fromd');
+    const checkoutInput = document.getElementById('date-input-tod');
+    const calendarIcons = document.querySelectorAll('.field-checkin .fa-calendar, .field-checkout .fa-calendar');
+    const searchBtn = document.querySelector('.search-button');
+    const roomBox = document.querySelector('.room-box');
 
-  if (popup && anchor) {
-    const rect = anchor.getBoundingClientRect();
+    // ======= Date utils =======
+    const formatIsoDate = (date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
 
-    popup.style.position = "absolute";
-    popup.style.top = `${rect.top + window.scrollY}px`;
-    popup.style.left = `${rect.left + window.scrollX}px`;
-    popup.style.width = `${rect.width}px`;
-    popup.style.display = "flex";
-  }
-}
+    const formatDisplayDate = (date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${day}/${month}/${year}`;
+    };
 
-function closePopup(popupId) {
-  const popup = document.getElementById(popupId);
-  if (popup) {
-    popup.style.display = "none";
-  }
-}
+    const parseDisplayDate = (dateString) => {
+        if (!dateString) return new Date();
+        const parts = dateString.split('/');
+        return new Date(parts[2], parts[1] - 1, parts[0]);
+    };
 
-function formatDateForDisplay(dateString) {
-  const date = new Date(dateString);
-  const day = date.getDate();
-  const month = date.toLocaleString("vi-VN", { month: "short" });
-  const year = date.getFullYear();
-  return `${day} ${month} ${year}`;
-}
+    const parseIsoDate = (dateString) => {
+        if (!dateString) return null;
+        const parts = dateString.split('-');
+        return new Date(parts[0], parts[1] - 1, parts[2]);
+    };
 
-function handleDateChange(event, label) {
-  const selectedDate = event.target.value;
+    // ======= Calendar =======
+    const createCalendarElement = (inputElement) => {
+        const existingCalendar = inputElement.parentElement.querySelector('.calendar-popup');
+        if (existingCalendar) existingCalendar.remove();
 
-  if (label === "Check-in") {
-    document.getElementById("checkin-input").value = selectedDate;
-    document
-      .querySelector('[data-label="Check-in"] .button__info')
-      ?.insertAdjacentHTML(
-        "beforeend",
-        `<span class="selected-date">${formatDateForDisplay(
-          selectedDate
-        )}</span>`
-      );
-    localStorage.setItem("checkinDate", selectedDate);
-    closePopup("checkin-popup");
-  } else if (label === "Check-out") {
-    document.getElementById("checkout-input").value = selectedDate;
-    document
-      .querySelector('[data-label="Check-out"] .button__info')
-      ?.insertAdjacentHTML(
-        "beforeend",
-        `<span class="selected-date">${formatDateForDisplay(
-          selectedDate
-        )}</span>`
-      );
+        const calendarDiv = document.createElement('div');
+        calendarDiv.className = 'calendar-popup';
+        calendarDiv.innerHTML = `
+            <div class="calendar-header">
+                <button type="button" class="prev-month">&lt;</button>
+                <span class="calendar-month-year"></span>
+                <button type="button" class="next-month">&gt;</button>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-day-name">Sun</div>
+                <div class="calendar-day-name">Mon</div>
+                <div class="calendar-day-name">Tue</div>
+                <div class="calendar-day-name">Wed</div>
+                <div class="calendar-day-name">Thu</div>
+                <div class="calendar-day-name">Fri</div>
+                <div class="calendar-day-name">Sat</div>
+            </div>
+        `;
+        inputElement.parentElement.appendChild(calendarDiv);
+        return calendarDiv;
+    };
 
-    localStorage.setItem("checkoutDate", selectedDate);
-    closePopup("checkout-popup");
-  }
+    const renderCalendar = (calendarDiv, date, inputElement) => {
+        const grid = calendarDiv.querySelector('.calendar-grid');
+        const monthYear = calendarDiv.querySelector('.calendar-month-year');
+        const currentMonth = date.getMonth();
+        const currentYear = date.getFullYear();
 
-  checkFormCompletion();
-}
+        const minDateStr = inputElement.getAttribute('data-min');
+        const maxDateStr = inputElement.getAttribute('data-max');
+        let minDate = parseIsoDate(minDateStr); if(minDate) minDate.setHours(0,0,0,0);
+        let maxDate = parseIsoDate(maxDateStr); if(maxDate) maxDate.setHours(0,0,0,0);
 
-function toggleLocationPopup() {
-  const popup = document.getElementById("location-popup");
-  const container = document.querySelector(".location-container");
-  const isVisible = popup.style.display === "block";
-  popup.style.display = isVisible ? "none" : "block";
-  container.classList.toggle("active", !isVisible);
-}
+        const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        monthYear.textContent = `${monthNames[currentMonth]} ${currentYear}`;
 
-function selectLocation(location) {
-  document.querySelector(".step__highlight").textContent = location;
-  document.getElementById("location-input").value = location;
-  localStorage.setItem("selectedLocation", location);
-  toggleLocationPopup();
-  checkFormCompletion();
-}
+        // Remove previous days
+        const days = grid.querySelectorAll('.calendar-day');
+        days.forEach(d => d.remove());
 
-function openRoomPopup() {
-  const popup = document.getElementById("room-popup");
-  const anchor = document.querySelector(".info__detail");
-  if (popup && anchor) {
-    const rect = anchor.getBoundingClientRect();
-    popup.style.position = "absolute";
-    popup.style.top = `${rect.top + window.scrollY}px`;
-    popup.style.left = `${rect.left + window.scrollX}px`;
-    popup.style.width = `${rect.width}px`;
-    popup.style.display = "flex";
-  }
-}
+        const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        const today = new Date(); today.setHours(0,0,0,0);
+        let selectedDate = parseDisplayDate(inputElement.value);
+        if(isNaN(selectedDate.getTime())) selectedDate = null;
 
-function closeRoomPopup() {
-  const popup = document.getElementById("room-popup");
-  if (popup) popup.style.display = "none";
-}
+        for(let i=0;i<firstDayOfMonth;i++){ grid.appendChild(document.createElement('div')); }
 
-function toggleRoomPopup() {
-  const popup = document.getElementById("room-popup");
-  const isVisible = popup.style.display === "flex";
-  if (isVisible) {
-    closeRoomPopup();
-  } else {
-    openRoomPopup();
-  }
-}
+        for(let i=1;i<=daysInMonth;i++){
+            const dayCell = document.createElement('div');
+            dayCell.className = 'calendar-day';
+            dayCell.textContent = i;
+            const checkDate = new Date(currentYear, currentMonth, i); checkDate.setHours(0,0,0,0);
 
-let adults = 0;
-let children = 0;
+            if(checkDate.getTime() === today.getTime()) dayCell.classList.add('today');
+            if(selectedDate && checkDate.getTime() === selectedDate.getTime()) dayCell.classList.add('selected');
 
-function updateGuestCount(type, change) {
-  if (type === "adults") {
-    adults = Math.max(0, adults + change);
-    document.getElementById("adult-count").textContent = adults;
-  } else if (type === "children") {
-    children = Math.max(0, children + change);
-    document.getElementById("children-count").textContent = children;
-  }
-}
+            let isDisabled = false;
+            if(minDate && checkDate < minDate) isDisabled = true;
+            if(maxDate && checkDate > maxDate) isDisabled = true;
 
-function confirmGuestSelection() {
-  const info = document.querySelector(".room__selection .button__info");
-  info.innerHTML = `
-    <div class="amount"><p>Adults</p><p>${adults}</p></div>
-    <div class="amount"><p>Children</p><p>${children}</p></div>
-  `;
-  document.getElementById("guests-input").value = adults + children;
-  localStorage.setItem("adults", adults);
-  localStorage.setItem("children", children);
-  localStorage.setItem("totalGuests", adults + children);
+            if(isDisabled) dayCell.classList.add('disabled');
+            else dayCell.addEventListener('click',(e)=>{
+                e.stopPropagation();
+                inputElement.value = formatDisplayDate(checkDate);
+                if(inputElement.id === 'date-input-fromd') updateCheckoutDate();
+                calendarDiv.classList.remove('active');
+            });
 
-  const popup = document.getElementById("room-popup");
-  if (popup) popup.style.display = "none";
-  checkFormCompletion();
-}
+            grid.appendChild(dayCell);
+        }
+    };
 
-function checkFormCompletion() {
-  const location = document.getElementById("location-input").value.trim();
-  const checkin = document.getElementById("checkin-input").value.trim();
-  const checkout = document.getElementById("checkout-input").value.trim();
-  const guests = document.getElementById("guests-input").value.trim();
+    const setupCalendar = (icon) => {
+        icon.addEventListener('click', (e)=>{
+            e.stopPropagation();
+            const label = icon.closest('label');
+            const input = label.querySelector('input');
+            let calendar = label.querySelector('.calendar-popup');
+            if(!calendar) calendar = createCalendarElement(input);
 
-  const isComplete = location && checkin && checkout && guests;
-  document.getElementById("confirm-btn").disabled = !isComplete;
-}
+            document.querySelectorAll('.calendar-popup').forEach(c => {if(c!==calendar)c.classList.remove('active');});
+            calendar.classList.toggle('active');
 
-["location-input", "checkin-input", "checkout-input", "guests-input"].forEach(
-  (id) => {
-    document.getElementById(id).addEventListener("input", checkFormCompletion);
-  }
-);
+            if(calendar.classList.contains('active')){
+                let currentDate = parseDisplayDate(input.value);
+                if(isNaN(currentDate.getTime())) currentDate = new Date();
+                renderCalendar(calendar, currentDate, input);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const confirmBtn = document.getElementById("confirm-btn");
+                const prevBtn = calendar.querySelector('.prev-month');
+                const nextBtn = calendar.querySelector('.next-month');
+                const newPrevBtn = prevBtn.cloneNode(true);
+                const newNextBtn = nextBtn.cloneNode(true);
+                prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+                nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
 
-  confirmBtn.addEventListener("click", function () {
-    if (!confirmBtn.disabled) {
-      window.location.href = "./reservation-page-2.html";
-    }
-  });
+                newPrevBtn.addEventListener('click',(e)=>{
+                    e.stopPropagation();
+                    currentDate.setMonth(currentDate.getMonth()-1);
+                    renderCalendar(calendar,currentDate,input);
+                });
+                newNextBtn.addEventListener('click',(e)=>{
+                    e.stopPropagation();
+                    currentDate.setMonth(currentDate.getMonth()+1);
+                    renderCalendar(calendar,currentDate,input);
+                });
+            }
+        });
+    };
 
-  if (localStorage.getItem("checkinDate")) {
-    document.getElementById("checkin-input").value =
-      localStorage.getItem("checkinDate");
-  }
-  if (localStorage.getItem("checkoutDate")) {
-    document.getElementById("checkout-input").value =
-      localStorage.getItem("checkoutDate");
-  }
-  const navTop = document.getElementById("top-page");
-  if (navTop) {
-    navTop.addEventListener("click", function () {
-      window.location.href = "../homePage.html";
+    const updateCheckoutDate = () => {
+        if(!checkinInput || !checkoutInput) return;
+        let checkinValue = checkinInput.value;
+        if(checkinValue){
+            let checkinDate = parseDisplayDate(checkinValue);
+            const checkoutDate = new Date(checkinDate);
+            checkoutDate.setDate(checkoutDate.getDate()+1);
+            checkoutInput.value = formatDisplayDate(checkoutDate);
+            checkoutInput.setAttribute('data-min', formatIsoDate(checkinDate));
+        }
+    };
+
+    calendarIcons.forEach(icon => setupCalendar(icon));
+    document.addEventListener('click',(e)=>{
+        if(!e.target.closest('.field-checkin') && !e.target.closest('.field-checkout')){
+            document.querySelectorAll('.calendar-popup').forEach(c=>c.classList.remove('active'));
+        }
     });
-  }
+
+    if(checkinInput){
+        const today = new Date();
+        checkinInput.value = formatDisplayDate(today);
+        checkinInput.setAttribute('data-min', formatIsoDate(today));
+        updateCheckoutDate();
+    }
+
+    // ======= Render room cards =======
+    const renderRooms = (rooms, checkIn, checkOut, nights) => {
+        roomBox.innerHTML = ''; // Xóa card cũ
+        if(!rooms || rooms.length === 0){
+            roomBox.innerHTML = `<p>No rooms available for selected dates.</p>`;
+            return;
+        }
+
+        rooms.forEach(room => {
+            const card = document.createElement('div');
+            card.classList.add('room-card');
+            card.innerHTML = `
+                <h3>${room.typeName}</h3>
+                <p>View: ${room.roomView}</p>
+                <p>Price: $${room.price} / night</p>
+                <p>Check-in: ${checkIn}</p>
+                <p>Check-out: ${checkOut}</p>
+                <p>Nights: ${nights}</p>
+                <button class="book-btn">Book Now</button>
+            `;
+            roomBox.appendChild(card);
+        });
+    };
+
+    // ======= Search button =======
+    if(searchBtn){
+        searchBtn.addEventListener('click', async (e)=>{
+            e.preventDefault();
+            const checkInVal = checkinInput.value;
+            const checkOutVal = checkoutInput.value;
+            const roomsVal = document.getElementById('select-rooms').value;
+            const adultsVal = parseInt(document.getElementById('select-adults').value);
+            const childrenVal = parseInt(document.getElementById('select-children').value);
+
+            const toIso = (dateStr) => {
+                const parts = dateStr.split('/');
+                return `${parts[2]}-${parts[1].padStart(2,'0')}-${parts[0].padStart(2,'0')}`;
+            };
+
+            const requestData = {
+                checkIn: toIso(checkInVal),
+                checkOut: toIso(checkOutVal),
+                rooms: roomsVal,
+                adults: adultsVal,
+                children: childrenVal
+            };
+
+            try {
+                const res = await fetch('http://localhost:8080/api/reservation/search',{
+                    method:'POST',
+                    headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify(requestData)
+                });
+                const data = await res.json();
+                const nights = (parseDisplayDate(checkOutVal) - parseDisplayDate(checkInVal))/(1000*60*60*24);
+                renderRooms(data, checkInVal, checkOutVal, nights);
+            } catch(err){
+                console.error('Fetch error:', err);
+                roomBox.innerHTML = `<p>Error fetching rooms.</p>`;
+            }
+        });
+    }
 });
